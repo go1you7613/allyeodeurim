@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B60 담당자 계정 관리 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="inst" data-menu="B60">
+<!-- 화면 ID: B60 / 담당자 계정 관리 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">계정</p><h1>담당자 계정 관리</h1></div><div class="page-head__actions"><a class="btn btn--primary" href="B61.html"><i data-lucide="user-plus"></i>담당자 등록</a></div></div>
+
+<section class="panel">
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>아이디</th><th>이름</th><th>권한</th><th>사용 여부</th><th>잠금</th><th>마지막 로그인</th><th></th></tr></thead><tbody><tr><td>gana_admin</td><td>관리자A</td><td>대표</td><td>사용</td><td>-</td><td>2026.11.04 09:12</td><td><a class="btn btn--outline btn--sm" href="B61.html?state=edit">수정</a></td></tr><tr><td>gana_staff1</td><td>담당자B</td><td>담당자</td><td>사용</td><td>-</td><td>2026.11.03 17:40</td><td><a class="btn btn--outline btn--sm" href="B61.html?state=edit">수정</a></td></tr><tr><td>gana_staff2</td><td>담당자C</td><td>담당자</td><td>사용</td><td><span class="badge badge--strong">잠김</span></td><td>2026.10.30 10:05</td><td><a class="btn btn--outline btn--sm" href="B61.html?state=edit">수정</a></td></tr><tr><td>gana_staff3</td><td>담당자D</td><td>담당자</td><td><span class="badge">사용 중지</span></td><td>-</td><td>2026.09.12 14:22</td><td><a class="btn btn--outline btn--sm" href="B61.html?state=edit">수정</a></td></tr></tbody></table></div>
+  <p class="field__help mt-4">대표 권한은 운영자만 줄 수 있습니다.</p>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

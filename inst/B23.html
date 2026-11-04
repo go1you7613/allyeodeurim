@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B23 발송 결과 상세 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="inst" data-menu="B23">
+<!-- 화면 ID: B23 / 발송 결과 상세 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">기관 소식 &gt; 발송 결과</p><h1>발송 결과 상세</h1></div><div class="page-head__actions"><a class="btn btn--outline" href="B22.html"><i data-lucide="list"></i>목록</a></div></div>
+
+<div class="stat-grid stat-grid--5">
+  <div class="stat"><div class="stat__num">12,210<span class="stat__unit">건</span></div><div class="stat__label">대상 구독</div></div><div class="stat"><div class="stat__num">12,084<span class="stat__unit">건</span></div><div class="stat__label">성공</div></div><div class="stat"><div class="stat__num">126<span class="stat__unit">건</span></div><div class="stat__label">실패</div></div><div class="stat"><div class="stat__num">8<span class="stat__unit">원</span></div><div class="stat__label">적용 단가</div></div><div class="stat"><div class="stat__num">96,672<span class="stat__unit">원</span></div><div class="stat__label">차감 요금</div></div>
+</div>
+<div class="grid-2">
+<section class="panel">
+  <h2 class="panel__title" style="margin-bottom:16px">발송 내용</h2>
+  <dl class="kv"><dt>제목</dt><dd>(광고) 가나 지역화폐 10% 할인 판매 이벤트</dd><dt>광고성</dt><dd>예</dd><dt>본문</dt><dd><span style="white-space:pre-line">가나 지역화폐를 11월 한 달 동안 10% 할인 판매합니다.
+판매처와 한도는 링크에서 확인해 주세요.</span></dd><dt>링크</dt><dd>https://gana-city.example/pay</dd><dt>작성자</dt><dd>관리자A</dd><dt>발송 일시</dt><dd>2026.11.04 10:00 (즉시)</dd></dl>
+</section>
+<aside class="panel">
+  <h2 class="panel__title" style="margin-bottom:16px">실패 사유</h2>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>사유</th><th class="num">건수</th></tr></thead><tbody><tr><td>앱 삭제, 토큰 만료</td><td class="num">118</td></tr><tr><td>기타</td><td class="num">8</td></tr></tbody></table></div>
+  <p class="field__help mt-4">차감 요금 = 성공 건수 × 발송 시점 단가. 회원이 여러 기기를 써도 구독 1건으로 셉니다.</p>
+  <p class="field__help mt-4">개인별 수신 내역은 제공하지 않습니다.</p>
+</aside>
+</div>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

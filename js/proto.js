@@ -101,6 +101,116 @@
     b.addEventListener('click', function () { if (!b.disabled) location.href = b.dataset.href; });
   });
 
+  // ⑦ 관리자 공통 레이아웃: body data-area(inst, local, console) + data-menu(화면 ID)
+  //    상단 바와 왼쪽 메뉴를 넣고, 화면의 <main class="admin-main">을 본문 자리에 둠
+  var AREAS = {
+    inst: {
+      area: '기관 관리자', org: '가나시청', user: '관리자A (대표)', logout: 'B01.html',
+      menu: [
+        { id: 'B10', label: '대시보드', icon: 'layout-dashboard' },
+        { group: '기관 소식' },
+        { id: 'B20', label: '기관 소식 작성', icon: 'send' },
+        { id: 'B21', label: '예약 목록', icon: 'calendar-clock' },
+        { id: 'B22', label: '발송 결과', icon: 'list-checks', also: ['B23'] },
+        { group: '기관 정보' },
+        { id: 'B30', label: '구독자 현황', icon: 'users' },
+        { id: 'B40', label: '기관 프로필', icon: 'building-2' },
+        { id: 'B50', label: '사용량, 요금', icon: 'receipt' },
+        { group: '계정' },
+        { id: 'B60', label: '담당자 계정 관리', icon: 'user-cog', also: ['B61'], owner: true },
+        { id: 'B70', label: '내 정보', icon: 'user' }
+      ]
+    },
+    local: {
+      area: '로컬 관리자', org: '가나시청 설치 모듈', user: 'admin', logout: 'C01.html',
+      menu: [
+        { id: 'C10', label: '연결 상태', icon: 'activity' },
+        { group: '수집 설정' },
+        { id: 'C20', label: 'DB 연결', icon: 'database' },
+        { id: 'C21', label: '수집 게시판', icon: 'list', also: ['C22'] },
+        { id: 'C30', label: '발송 이력', icon: 'history' },
+        { group: '환경 설정' },
+        { id: 'C40', label: '중계서버 연결', icon: 'server' },
+        { id: 'C41', label: '관리자 계정', icon: 'user-cog' },
+        { id: 'C42', label: '로그 보관', icon: 'archive' }
+      ]
+    },
+    console: {
+      area: '운영자 콘솔', org: '알려드림 운영', user: '운영자1', logout: 'D01.html',
+      menu: [
+        { id: 'D10', label: '대시보드', icon: 'layout-dashboard' },
+        { group: '기관' },
+        { id: 'D20', label: '기관 관리', icon: 'building-2', also: ['D21', 'D22'] },
+        { id: 'D30', label: '기관별 단가', icon: 'tag' },
+        { id: 'D31', label: '월 정산', icon: 'calculator' },
+        { group: '연동' },
+        { id: 'D40', label: '수집기 관리', icon: 'rss', also: ['D41'] },
+        { id: 'D42', label: '수집 실패 내역', icon: 'alert-triangle' },
+        { id: 'D50', label: '설치 모듈 현황', icon: 'server', also: ['D51'] },
+        { group: '앱 운영' },
+        { id: 'D60', label: '앱 공지', icon: 'clipboard-list', also: ['D61'] },
+        { id: 'D62', label: '기관 노출 관리', icon: 'eye' },
+        { group: '계정' },
+        { id: 'D70', label: '운영자 계정 관리', icon: 'user-cog', also: ['D71'] }
+      ]
+    }
+  };
+  var cfg = AREAS[body.dataset.area];
+  var main = document.querySelector('.admin-main');
+  if (cfg && main) {
+    body.classList.add('admin-body');
+    var cur = body.dataset.menu;
+    var top = document.createElement('header');
+    top.className = 'admin-top';
+    top.innerHTML =
+      '<button class="icon-btn admin-top__menu" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>' +
+      '<a class="admin-top__brand" href="' + cfg.menu[0].id + '.html"><i data-lucide="bell"></i>알려드림</a>' +
+      '<span class="admin-top__area">' + cfg.area + '</span><span class="admin-top__spacer"></span>' +
+      '<span class="admin-top__user"><i data-lucide="building-2"></i><span>' + cfg.org + '</span></span>' +
+      '<span class="admin-top__user"><i data-lucide="user"></i><span>' + cfg.user + '</span></span>' +
+      '<a class="btn btn--ghost btn--sm" href="' + cfg.logout + '"><i data-lucide="log-out"></i>로그아웃</a>';
+    var wrap = document.createElement('div');
+    wrap.className = 'admin-wrap';
+    var lnb = document.createElement('nav');
+    lnb.className = 'lnb';
+    lnb.setAttribute('aria-label', cfg.area + ' 메뉴');
+    var ul = document.createElement('ul');
+    cfg.menu.forEach(function (m) {
+      var li = document.createElement('li');
+      if (m.group) { li.className = 'lnb__group'; li.textContent = m.group; }
+      else {
+        var on = m.id === cur || (m.also && m.also.indexOf(cur) > -1);
+        li.innerHTML = '<a href="' + m.id + '.html"' + (on ? ' aria-current="page"' : '') + '><i data-lucide="' + m.icon + '"></i>' + m.label + '</a>';
+      }
+      ul.appendChild(li);
+    });
+    lnb.appendChild(ul);
+    main.parentNode.insertBefore(top, main);
+    main.parentNode.insertBefore(wrap, main);
+    wrap.appendChild(lnb);
+    wrap.appendChild(main);
+    top.querySelector('.admin-top__menu').addEventListener('click', function () { lnb.classList.toggle('is-open'); });
+  }
+
+  // ⑧ 글자 수 표시: data-count="최대" 입력칸 옆 [data-count-for="입력칸id"]
+  document.querySelectorAll('[data-count-for]').forEach(function (out) {
+    var el = document.getElementById(out.dataset.countFor);
+    if (!el) return;
+    var max = el.getAttribute('maxlength');
+    function upd() { out.textContent = el.value.length + ' / ' + max; }
+    el.addEventListener('input', upd); upd();
+  });
+  // 라디오에 따라 보이기: input[data-show="요소id"] 선택 시 보임, 같은 name의 다른 값이면 숨김
+  document.querySelectorAll('input[type="radio"][data-show]').forEach(function (r) {
+    function sync() {
+      document.querySelectorAll('input[name="' + r.name + '"][data-show]').forEach(function (x) {
+        var t = document.getElementById(x.dataset.show); if (t) t.hidden = !x.checked;
+      });
+    }
+    document.querySelectorAll('input[name="' + r.name + '"]').forEach(function (x) { x.addEventListener('change', sync); });
+    sync();
+  });
+
   // ⑥ 아이콘
   if (window.lucide) window.lucide.createIcons();
 })();

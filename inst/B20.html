@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B20 기관 소식 작성 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="inst" data-menu="B20">
+<!-- 화면 ID: B20 / 기관 소식 작성 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">기관 소식</p><h1>기관 소식 작성</h1></div></div>
+
+<div class="grid-2">
+<section class="panel">
+  <form class="form" onsubmit="return false">
+    <div class="field"><label class="field__label"><span>제목 <span class="field__req">필수</span></span><span class="field__count" data-count-for="nt"></span></label><input class="input" id="nt" maxlength="40" value="가을 문화축제 자원봉사자 모집"></div>
+    <div class="field"><label class="field__label"><span>본문 <span class="field__req">필수</span></span><span class="field__count" data-count-for="nb"></span></label><textarea class="input" id="nb" maxlength="2000">가나시청에서 가을 문화축제를 함께 만들 자원봉사자를 모집합니다.
+
+- 활동 기간: 11월 15일 ~ 11월 16일
+- 모집 인원: 50명
+- 신청 방법: 아래 링크에서 신청</textarea></div>
+    <div class="field"><label class="field__label"><span>링크 </span></label><input class="input" type="url" placeholder="https://" value="https://gana-city.example/volunteer"><p class="field__help">https 주소만 넣을 수 있습니다. 앱에서 "링크 열기" 버튼으로 보입니다.</p></div>
+    <div class="field"><span class="field__label"><span>광고성 여부 <span class="field__req">필수</span></span></span>
+      <div class="radio-row"><label><input type="radio" name="ad" checked>아니요</label><label><input type="radio" name="ad" data-show="ad-note">예 (광고성)</label></div>
+      <div class="notice" id="ad-note" hidden><i data-lucide="info"></i><p>광고성으로 고르면 제목 앞에 "(광고)"가 자동으로 붙고, 밤 9시 ~ 아침 8시에는 즉시 발송과 예약을 할 수 없습니다.</p></div>
+    </div>
+    <div class="field"><span class="field__label"><span>발송 시점 <span class="field__req">필수</span></span></span>
+      <div class="radio-row"><label><input type="radio" name="when" checked>즉시 발송</label><label><input type="radio" name="when" data-show="when-at">예약 발송</label></div>
+      <div id="when-at" hidden><input class="input" type="datetime-local" value="2026-11-05T10:00" style="max-width:280px"><p class="field__help mt-4" style="margin-top:6px">지금부터 10분 이후만 고를 수 있습니다.</p></div>
+    </div>
+    <div class="form-actions">
+      <a class="btn btn--ghost" href="B10.html">취소</a>
+      <a class="btn btn--outline" href="B21.html">예약 저장</a>
+      <button class="btn btn--primary" data-open="confirm-send"><i data-lucide="send"></i>발송하기</button>
+    </div>
+  </form>
+</section>
+<aside class="panel">
+  <h2 class="panel__title" style="margin-bottom:16px">예상 발송</h2>
+  <dl class="kv"><dt>받는 사람</dt><dd>가나시청 구독자 전체</dd><dt>예상 수신</dt><dd><b>12,102</b> 구독</dd><dt>적용 단가</dt><dd>8원</dd><dt>예상 요금</dt><dd><b>96,816원</b></dd></dl>
+  <p class="field__help mt-4">예상 수신은 지금 구독 중이고 기관 알림과 전체 알림을 켠 구독 수입니다. 실제 요금은 발송 성공 건 기준이라 다를 수 있습니다.</p>
+  <p class="field__help mt-4">알림을 끈 구독자는 푸시를 받지 않고 요금도 붙지 않습니다. 앱 소식 탭에는 쌓입니다.</p>
+</aside>
+</div>
+</main>
+<div class="modal-backdrop" id="confirm-send"><div class="modal" role="dialog" aria-labelledby="confirm-send-t">
+  <h2 class="modal__title" id="confirm-send-t">기관 소식을 보낼까요?</h2><p class="modal__text">보낸 뒤에는 수정하거나 취소할 수 없습니다.</p><dl class="kv" style="margin-top:16px"><dt>제목</dt><dd>가을 문화축제 자원봉사자 모집</dd><dt>예상 수신</dt><dd>12,102 구독</dd><dt>예상 요금</dt><dd>96,816원</dd></dl>
+  <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><a class="btn btn--primary" href="B22.html">발송</a></div></div></div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B50 사용량, 요금 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="inst" data-menu="B50">
+<!-- 화면 ID: B50 / 사용량, 요금 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">기관 정보</p><h1>사용량, 요금</h1></div></div>
+
+<section class="panel">
+  <div class="panel__head"><h2 class="panel__title">월별 사용량</h2><span class="muted small">수신 구독 1건 단위, 성공 건만 과금, 월 후불 정산</span></div>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>월</th><th class="num">발송 횟수</th><th class="num">성공 건수</th><th class="num">요금</th><th>정산 상태</th></tr></thead><tbody><tr><td>2026.11</td><td class="num">9</td><td class="num">38,215</td><td class="num">305,720원</td><td><span class="badge badge--strong">집계 중</span></td></tr><tr><td>2026.10</td><td class="num">14</td><td class="num">61,802</td><td class="num">494,416원</td><td><span class="badge">확정</span></td></tr><tr><td>2026.09</td><td class="num">11</td><td class="num">47,330</td><td class="num">378,640원</td><td><span class="badge">확정</span></td></tr><tr><td>2026.08</td><td class="num">8</td><td class="num">30,114</td><td class="num">240,912원</td><td><span class="badge">확정</span></td></tr></tbody></table></div>
+</section>
+<section class="panel">
+  <div class="panel__head"><h2 class="panel__title">청구 내역</h2><span class="badge">대표 관리자만 보임</span></div>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>청구 월</th><th class="num">청구 금액</th><th>확정일</th></tr></thead><tbody><tr><td>2026.10</td><td class="num">494,416원</td><td>2026.11.03</td></tr><tr><td>2026.09</td><td class="num">378,640원</td><td>2026.10.02</td></tr><tr><td>2026.08</td><td class="num">240,912원</td><td>2026.09.02</td></tr></tbody></table></div>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

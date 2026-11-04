@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B22 발송 결과 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="inst" data-menu="B22">
+<!-- 화면 ID: B22 / 발송 결과 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">기관 소식</p><h1>발송 결과</h1></div></div>
+
+<section class="panel">
+  <form class="filter" onsubmit="return false">
+    <label>기간<span class="inline"><input class="input" type="date" value="2026-10-01"><input class="input" type="date" value="2026-11-04"></span></label>
+    <label>상태<select class="select"><option>전체</option><option>예약</option><option>발송 중</option><option>완료</option><option>취소</option></select></label>
+    <label>제목<input class="input" placeholder="제목 검색"></label>
+    <button class="btn btn--primary btn--sm"><i data-lucide="search"></i>검색</button>
+  </form>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>발송 일시</th><th>제목</th><th>상태</th><th class="num">성공 건수</th><th class="num">차감 요금</th></tr></thead><tbody><tr><td>2026.11.04 10:00</td><td><a class="link" href="B23.html">(광고) 가나 지역화폐 10% 할인 판매 이벤트</a></td><td><span class="badge">완료</span></td><td class="num">12,084</td><td class="num">96,672원</td></tr><tr><td>2026.11.03 18:00</td><td><a class="link" href="B23.html">가을 문화축제 자원봉사자 모집</a></td><td><span class="badge badge--strong">예약</span></td><td class="num">-</td><td class="num">-</td></tr><tr><td>2026.11.01 09:30</td><td><a class="link" href="B23.html">시민 정책 제안 설명회 안내</a></td><td><span class="badge">완료</span></td><td class="num">11,920</td><td class="num">95,360원</td></tr><tr><td>2026.10.28 14:00</td><td><a class="link" href="B23.html">도서관 휴관일 변경 안내</a></td><td><span class="badge">완료</span></td><td class="num">11,874</td><td class="num">94,992원</td></tr><tr><td>2026.10.25 11:00</td><td><a class="link" href="B23.html">어린이 안전 교실 참가자 모집</a></td><td><span class="badge">완료</span></td><td class="num">11,802</td><td class="num">94,416원</td></tr><tr><td>2026.10.20 10:00</td><td><a class="link" href="B23.html">가을 문화축제 일정 안내 (변경)</a></td><td><span class="badge">취소</span></td><td class="num">-</td><td class="num">-</td></tr><tr><td>2026.10.15 15:00</td><td><a class="link" href="B23.html">(광고) 전통시장 상품권 할인 판매</a></td><td><span class="badge">완료</span></td><td class="num">11,650</td><td class="num">93,200원</td></tr></tbody></table></div>
+  <div class="tbl-foot"><span>전체 42건</span><nav class="pager" aria-label="페이지">
+<a href="#" aria-label="이전"><i data-lucide="chevron-left"></i></a><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a>
+<a href="#" aria-label="다음"><i data-lucide="chevron-right"></i></a></nav></div>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

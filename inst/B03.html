@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B03 비밀번호 변경 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="auth-body">
+<!-- 화면 ID: B03 / 비밀번호 변경 -->
+<main class="auth">
+
+<div class="auth__brand"><h1>비밀번호 변경</h1><p>보안을 위해 비밀번호를 바꿔 주세요</p></div>
+<div class="notice" data-state="default" style="margin-bottom:16px"><i data-lucide="key-round"></i><p>임시 비밀번호로 로그인했습니다. 새 비밀번호를 정해 주세요.</p></div>
+<div class="notice" data-state="expired" style="margin-bottom:16px"><i data-lucide="clock"></i><p>비밀번호를 바꾼 지 90일이 지났습니다. 새 비밀번호를 정해 주세요.</p></div>
+<form class="form" onsubmit="return false">
+  <div class="field"><label class="field__label"><span>현재 비밀번호 </span><span class="field__req">필수</span></label><input class="input" type="password"></div>
+  <div class="field"><label class="field__label"><span>새 비밀번호 </span><span class="field__req">필수</span></label><input class="input" type="password"></div>
+  <div class="field"><label class="field__label"><span>새 비밀번호 확인 </span><span class="field__req">필수</span></label><input class="input" type="password"></div>
+  <ul class="rules"><li>영문, 숫자, 특수문자를 섞어 9자 이상</li><li>직전 비밀번호는 다시 쓸 수 없습니다</li><li>90일마다 바꿔야 합니다</li></ul>
+  <a class="btn btn--primary btn--block" href="B10.html">변경하고 시작</a>
+</form>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

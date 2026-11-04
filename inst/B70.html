@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B70 내 정보 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="inst" data-menu="B70">
+<!-- 화면 ID: B70 / 내 정보 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">계정</p><h1>내 정보</h1></div></div>
+
+<div class="grid-2">
+<section class="panel">
+  <h2 class="panel__title" style="margin-bottom:16px">계정 정보</h2>
+  <form class="form" onsubmit="return false">
+    <div class="field"><label class="field__label"><span>아이디 </span></label><input class="input" value="gana_admin" readonly></div>
+    <div class="field"><label class="field__label"><span>권한 </span></label><input class="input" value="대표" readonly></div>
+    <div class="field"><label class="field__label"><span>이름 </span></label><input class="input" value="관리자A"></div>
+    <div class="field"><label class="field__label"><span>업무 이메일 </span></label><input class="input" value="admin@example.go.kr"></div>
+    <div class="form-actions"><a class="btn btn--primary" href="B70.html">저장</a></div>
+  </form>
+</section>
+<section class="panel">
+  <h2 class="panel__title" style="margin-bottom:16px">비밀번호 변경</h2>
+  <form class="form" onsubmit="return false">
+    <div class="field"><label class="field__label"><span>현재 비밀번호 </span></label><input class="input" type="password"></div>
+    <div class="field"><label class="field__label"><span>새 비밀번호 </span></label><input class="input" type="password"></div>
+    <div class="field"><label class="field__label"><span>새 비밀번호 확인 </span></label><input class="input" type="password"></div>
+    <ul class="rules"><li>영문, 숫자, 특수문자를 섞어 9자 이상</li><li>직전 비밀번호는 다시 쓸 수 없습니다</li><li>90일마다 바꿔야 합니다</li></ul>
+    <div class="form-actions"><a class="btn btn--primary" href="B70.html">비밀번호 변경</a></div>
+  </form>
+</section>
+</div>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

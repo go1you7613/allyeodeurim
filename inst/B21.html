@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B21 예약 목록 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="inst" data-menu="B21">
+<!-- 화면 ID: B21 / 예약 목록 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">기관 소식</p><h1>예약 목록</h1></div><div class="page-head__actions"><a class="btn btn--primary" href="B20.html"><i data-lucide="send"></i>기관 소식 작성</a></div></div>
+
+<section class="panel">
+  <p class="muted small" style="margin-bottom:12px">담당자는 자기가 쓴 예약만, 대표 관리자는 모든 예약을 취소할 수 있습니다. 예약 일시 전까지만 취소됩니다.</p>
+  <div data-state="default"><div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>예약 일시</th><th>제목</th><th>작성자</th><th>광고성</th><th></th></tr></thead><tbody><tr><td>2026.11.05 10:00</td><td>가을 문화축제 자원봉사자 모집</td><td>담당자B</td><td>아니요</td><td><button class="btn btn--outline btn--sm" data-open="cancel">예약 취소</button></td></tr><tr><td>2026.11.07 09:00</td><td>(광고) 지역 상점가 할인 주간 안내</td><td>관리자A</td><td>예</td><td><button class="btn btn--outline btn--sm" data-open="cancel">예약 취소</button></td></tr></tbody></table></div></div>
+  <div data-state="empty"><div class="empty"><i data-lucide="calendar-x"></i><p>예약된 기관 소식이 없습니다.</p></div></div>
+</section>
+</main>
+<div class="modal-backdrop" id="cancel"><div class="modal" role="dialog" aria-labelledby="cancel-t">
+  <h2 class="modal__title" id="cancel-t">예약을 취소할까요?</h2><p class="modal__text">취소한 기관 소식은 발송되지 않습니다. 발송 결과 목록에 "취소"로 남습니다.</p>
+  <div class="modal__actions"><button class="btn btn--outline" data-close>닫기</button><a class="btn btn--primary" href="B21.html">예약 취소</a></div></div></div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

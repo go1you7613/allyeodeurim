@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B40 기관 프로필 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="inst" data-menu="B40">
+<!-- 화면 ID: B40 / 기관 프로필 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">기관 정보</p><h1>기관 프로필</h1></div></div>
+
+<div class="grid-2">
+<section class="panel">
+  <form class="form" onsubmit="return false">
+    <div class="field"><label class="field__label"><span>기관명 </span></label><input class="input" value="가나시청" readonly><p class="field__help">기관명은 운영자만 바꿀 수 있습니다.</p></div>
+    <div class="field"><span class="field__label"><span>로고</span></span>
+      <div class="row"><span class="logo logo--lg">가</span><div><input type="file" accept=".jpg,.png"><p class="field__help">jpg, png, 1MB 이하</p></div></div></div>
+    <div class="field"><label class="field__label"><span>소개 </span><span class="field__count" data-count-for="intro"></span></label><textarea class="input" id="intro" maxlength="200" style="min-height:96px">가나시 시민께 시정 소식과 생활 정보를 알려 드립니다.</textarea></div>
+    <div class="field"><label class="field__label"><span>홈페이지 주소 </span></label><input class="input" value="https://gana-city.example"></div>
+    <div class="form-actions"><a class="btn btn--primary" href="B40.html">저장</a></div>
+  </form>
+  <p class="field__help mt-4">저장하면 앱 기관 정보 화면에 바로 반영됩니다. 담당자는 조회만 할 수 있습니다.</p>
+</section>
+<aside class="panel">
+  <h2 class="panel__title" style="margin-bottom:16px">게시판 목록</h2>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>게시판</th><th>등록 경로</th><th>사용</th></tr></thead><tbody><tr><td>공지사항</td><td>설치 모듈</td><td>사용</td></tr><tr><td>행사안내</td><td>설치 모듈</td><td>사용</td></tr><tr><td>채용정보</td><td>설치 모듈</td><td>사용</td></tr><tr><td>고시공고</td><td>설치 모듈</td><td><span class="badge">사용 안 함</span></td></tr></tbody></table></div>
+  <p class="field__help mt-4">조회만 할 수 있습니다. 게시판 추가, 수정은 로컬 관리자(설치 모듈) 또는 운영자가 합니다.</p>
+</aside>
+</div>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>
