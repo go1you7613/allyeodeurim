@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A42 계정 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="app-body">
+<!-- 화면 ID: A42 / 계정 -->
+<div class="phone">
+
+<header class="appbar"><a class="icon-btn" href="A40.html" aria-label="뒤로"><i data-lucide="chevron-left"></i></a><h1 class="appbar__title">계정</h1></header>
+<main class="app-main">
+  <div data-state="default">
+    <div class="row" style="padding:8px 0 16px"><span class="logo"><i data-lucide="user"></i></span>
+      <div><p style="font-family:var(--font-display);color:var(--c-heading);font-weight:700">비회원</p><p class="muted small">구독 목록이 이 기기에만 저장됩니다</p></div></div>
+    <div class="notice"><i data-lucide="alert-circle"></i><p>비회원은 구독 목록이 이 기기에만 저장됩니다. 기기를 바꾸거나 앱을 다시 설치하면 구독 목록이 사라집니다.</p></div>
+    <a class="btn btn--primary btn--block mt-6" href="A04.html"><i data-lucide="user-plus"></i>회원으로 전환</a>
+    <p class="muted small mt-4">회원으로 바꾸면 지금 구독 목록을 계정으로 옮깁니다.</p>
+  </div>
+  <div data-state="member">
+    <table class="compare"><tbody>
+      <tr><th>로그인</th><td>카카오</td></tr><tr><th>가입일</th><td>2026.11.04</td></tr></tbody></table>
+    <div class="stack mt-6">
+      <button class="btn btn--outline btn--block" data-open="logout">로그아웃</button>
+      <button class="btn btn--ghost btn--block" data-open="withdraw">회원 탈퇴</button>
+    </div>
+  </div>
+</main>
+<div class="modal-backdrop" id="logout"><div class="modal modal--os" role="dialog">
+  <h2 class="modal__title">로그아웃</h2><p class="modal__text">이 기기에서 로그아웃합니다. 구독 목록은 계정에 남아 다시 로그인하면 복원됩니다.</p>
+  <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><a class="btn btn--primary" href="A02.html">로그아웃</a></div></div></div>
+<div class="modal-backdrop" id="withdraw"><div class="modal modal--os" role="dialog">
+  <h2 class="modal__title">회원 탈퇴</h2><p class="modal__text">탈퇴하면 회원 정보와 구독 목록이 모두 지워집니다. 탈퇴할까요?</p>
+  <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><a class="btn btn--primary" href="A02.html">탈퇴</a></div></div></div>
+</div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

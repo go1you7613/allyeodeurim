@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A32 기관 찾기 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="app-body">
+<!-- 화면 ID: A32 / 기관 찾기 -->
+<div class="phone">
+
+<header class="appbar"><a class="icon-btn" href="A30.html" aria-label="뒤로"><i data-lucide="chevron-left"></i></a><h1 class="appbar__title">기관 찾기</h1></header>
+<main class="app-main">
+  <form class="searchbar" onsubmit="return false"><i data-lucide="search"></i>
+    <input class="input" type="search" placeholder="기관명 2자 이상 입력" aria-label="기관명 검색"></form>
+  <div class="chip-row mt-4" data-chip-group role="group" aria-label="분류">
+    <button class="chip" aria-pressed="true">전체</button><button class="chip" aria-pressed="false">광역</button>
+    <button class="chip" aria-pressed="false">기초</button><button class="chip" aria-pressed="false">공공기관</button></div>
+  <ul class="list" data-state="default"><li><a class="list-item" href="A33.html"><span class="logo" aria-hidden="true">가</span>
+  <div class="list-item__body"><p class="list-item__title" style="color:var(--c-heading)">가나시청</p><p class="list-item__sub">광역</p></div>
+  <div class="list-item__end"><span class="badge badge--solid">구독 중</span></div></a></li>
+<li><a class="list-item" href="A33.html"><span class="logo" aria-hidden="true">다</span>
+  <div class="list-item__body"><p class="list-item__title" style="color:var(--c-heading)">다라구청</p><p class="list-item__sub">기초</p></div>
+  <div class="list-item__end"><span class="badge badge--solid">구독 중</span></div></a></li>
+<li><a class="list-item" href="A33.html"><span class="logo" aria-hidden="true">마</span>
+  <div class="list-item__body"><p class="list-item__title" style="color:var(--c-heading)">마바도청</p><p class="list-item__sub">광역</p></div>
+  <div class="list-item__end"><span class="badge badge--solid">구독 중</span></div></a></li>
+<li><a class="list-item" href="A33.html"><span class="logo" aria-hidden="true">사</span>
+  <div class="list-item__body"><p class="list-item__title" style="color:var(--c-heading)">사아군청</p><p class="list-item__sub">기초</p></div>
+  <div class="list-item__end"><i data-lucide="chevron-right"></i></div></a></li>
+<li><a class="list-item" href="A33.html"><span class="logo" aria-hidden="true">자</span>
+  <div class="list-item__body"><p class="list-item__title" style="color:var(--c-heading)">자차공단</p><p class="list-item__sub">공공기관</p></div>
+  <div class="list-item__end"><i data-lucide="chevron-right"></i></div></a></li>
+<li><a class="list-item" href="A33.html"><span class="logo" aria-hidden="true">카</span>
+  <div class="list-item__body"><p class="list-item__title" style="color:var(--c-heading)">카타재단</p><p class="list-item__sub">공공기관</p></div>
+  <div class="list-item__end"><i data-lucide="chevron-right"></i></div></a></li></ul>
+  <div class="mt-4" data-state="noresult"><div class="empty"><i data-lucide="search-x"></i><p>검색 결과가 없습니다.</p></div></div>
+</main>
+</div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

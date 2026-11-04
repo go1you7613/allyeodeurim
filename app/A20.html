@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A20 기관 소식 목록 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="app-body" data-tab="news">
+<!-- 화면 ID: A20 / 기관 소식 목록 -->
+<div class="phone">
+
+<header class="appbar"><h1 class="appbar__title">소식</h1></header>
+<main class="app-main">
+  <div data-state="default"><ul class="list"><li><a class="list-item is-unread" href="A21.html"><span class="logo" aria-hidden="true">가</span>
+  <div class="list-item__body"><div class="list-item__top"><span>가나시청</span></div>
+  <p class="list-item__title">(광고) 가나 지역화폐 10% 할인 판매 이벤트</p></div>
+  <div class="list-item__end"><span>10:00</span><span class="dot" aria-label="안 읽음"></span></div></a></li>
+<li><a class="list-item is-unread" href="A21.html"><span class="logo" aria-hidden="true">마</span>
+  <div class="list-item__body"><div class="list-item__top"><span>마바도청</span></div>
+  <p class="list-item__title">도민 정책 아이디어 공모전 참여 안내</p></div>
+  <div class="list-item__end"><span>11.01</span><span class="dot" aria-label="안 읽음"></span></div></a></li>
+<li><a class="list-item is-read" href="A21.html"><span class="logo" aria-hidden="true">다</span>
+  <div class="list-item__body"><div class="list-item__top"><span>다라구청</span></div>
+  <p class="list-item__title">어르신 독감 예방접종 일정 안내</p></div>
+  <div class="list-item__end"><span>10.25</span><span class="dot" aria-label="안 읽음"></span></div></a></li>
+<li><a class="list-item is-read" href="A21.html"><span class="logo" aria-hidden="true">가</span>
+  <div class="list-item__body"><div class="list-item__top"><span>가나시청</span></div>
+  <p class="list-item__title">가을 문화축제 자원봉사자 모집</p></div>
+  <div class="list-item__end"><span>10.20</span><span class="dot" aria-label="안 읽음"></span></div></a></li></ul>
+    <p class="muted small mt-4" style="text-align:center">최근 90일 동안 받은 기관 소식만 보입니다.</p></div>
+  <div data-state="nosub"><div class="empty"><i data-lucide="bookmark-plus"></i><p>아직 구독한 기관이 없습니다. 기관을 찾아 구독해 보세요.</p><a class="btn btn--primary btn--sm" href="A32.html"><i data-lucide="search"></i>기관 찾기</a></div></div>
+  <div data-state="nodata"><div class="empty"><i data-lucide="megaphone-off"></i><p>최근 90일 동안 받은 기관 소식이 없습니다.</p></div></div>
+  <div data-state="offline"><div class="empty"><i data-lucide="wifi-off"></i><p>인터넷에 연결되어 있지 않습니다. 연결을 확인해 주세요.</p><a class="btn btn--outline btn--sm" href="?">다시 시도</a></div></div>
+  <div data-state="error"><div class="empty"><i data-lucide="server-crash"></i><p>잠시 후 다시 시도해 주세요.</p><a class="btn btn--outline btn--sm" href="?">다시 시도</a></div></div>
+</main>
+</div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A10 게시판 알림 목록 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="app-body" data-tab="alarm">
+<!-- 화면 ID: A10 / 게시판 알림 목록 -->
+<div class="phone">
+
+<header class="appbar"><h1 class="appbar__title">알림</h1></header>
+<main class="app-main">
+  <div data-state="default expired push">
+    <div class="chip-row" data-chip-group role="group" aria-label="기관별 보기">
+  <button class="chip" aria-pressed="true">전체</button><button class="chip" aria-pressed="false">가나시청</button>
+  <button class="chip" aria-pressed="false">다라구청</button><button class="chip" aria-pressed="false">마바도청</button></div>
+    <ul class="list"><li><a class="list-item is-unread" href="A11.html"><span class="logo" aria-hidden="true">가</span>
+  <div class="list-item__body"><div class="list-item__top"><span>가나시청</span><span>공지사항</span></div>
+  <p class="list-item__title">2026년 하반기 청년 일자리 지원사업 참여자 모집</p></div>
+  <div class="list-item__end"><span>14:20</span><span class="dot" aria-label="안 읽음"></span></div></a></li>
+<li><a class="list-item is-unread" href="A11.html"><span class="logo" aria-hidden="true">다</span>
+  <div class="list-item__body"><div class="list-item__top"><span>다라구청</span><span>고시공고</span></div>
+  <p class="list-item__title">도로 정비 공사에 따른 통행 제한 안내</p></div>
+  <div class="list-item__end"><span>09:05</span><span class="dot" aria-label="안 읽음"></span></div></a></li>
+<li><a class="list-item is-read" href="A11.html"><span class="logo" aria-hidden="true">가</span>
+  <div class="list-item__body"><div class="list-item__top"><span>가나시청</span><span>행사안내</span></div>
+  <p class="list-item__title">시민 걷기대회 참가 신청 안내</p></div>
+  <div class="list-item__end"><span>11.02</span><span class="dot" aria-label="안 읽음"></span></div></a></li>
+<li><a class="list-item is-read" href="A11.html"><span class="logo" aria-hidden="true">마</span>
+  <div class="list-item__body"><div class="list-item__top"><span>마바도청</span><span>채용정보</span></div>
+  <p class="list-item__title">기간제 근로자 채용 공고 (행정 보조)</p></div>
+  <div class="list-item__end"><span>10.30</span><span class="dot" aria-label="안 읽음"></span></div></a></li>
+<li><a class="list-item is-read" href="A11.html"><span class="logo" aria-hidden="true">다</span>
+  <div class="list-item__body"><div class="list-item__top"><span>다라구청</span><span>공지사항</span></div>
+  <p class="list-item__title">구청 민원실 운영 시간 변경 안내</p></div>
+  <div class="list-item__end"><span>10.28</span><span class="dot" aria-label="안 읽음"></span></div></a></li>
+<li><a class="list-item is-read" href="A11.html"><span class="logo" aria-hidden="true">마</span>
+  <div class="list-item__body"><div class="list-item__top"><span>마바도청</span><span>공지사항</span></div>
+  <p class="list-item__title">2025년 도민 만족도 조사 결과 공개</p></div>
+  <div class="list-item__end"><span>2025.12.15</span><span class="dot" aria-label="안 읽음"></span></div></a></li></ul>
+    <p class="muted small mt-4" style="text-align:center">최근 90일 동안 받은 게시판 알림만 보입니다.</p>
+  </div>
+  <div data-state="nosub"><div class="empty"><i data-lucide="bookmark-plus"></i><p>아직 구독한 기관이 없습니다. 기관을 찾아 구독해 보세요.</p><a class="btn btn--primary btn--sm" href="A32.html"><i data-lucide="search"></i>기관 찾기</a></div></div>
+  <div data-state="nodata"><div class="chip-row" data-chip-group role="group" aria-label="기관별 보기">
+  <button class="chip" aria-pressed="true">전체</button><button class="chip" aria-pressed="false">가나시청</button>
+  <button class="chip" aria-pressed="false">다라구청</button><button class="chip" aria-pressed="false">마바도청</button></div><div class="empty"><i data-lucide="bell-off"></i><p>최근 90일 동안 받은 게시판 알림이 없습니다.</p></div></div>
+  <div data-state="offline"><div class="empty"><i data-lucide="wifi-off"></i><p>인터넷에 연결되어 있지 않습니다. 연결을 확인해 주세요.</p><a class="btn btn--outline btn--sm" href="?">다시 시도</a></div></div>
+  <div data-state="error"><div class="empty"><i data-lucide="server-crash"></i><p>잠시 후 다시 시도해 주세요.</p><a class="btn btn--outline btn--sm" href="?">다시 시도</a></div></div>
+</main>
+<!-- 앱 사용 중 푸시 수신 예시 (F-A00-02) -->
+<a class="inapp-banner" href="A21.html" data-state="push"><span class="logo" aria-hidden="true">마</span>
+  <div class="list-item__body"><div class="list-item__top"><span>알려드림</span><span>지금</span></div>
+  <p class="list-item__title" style="font-weight:700">[마바도청] 도민 정책 아이디어 공모전 참여 안내</p></div></a>
+<!-- 푸시 터치했는데 내역이 없을 때 (F-A00-03 ③) -->
+<div class="modal-backdrop" id="expired">
+  <div class="modal" role="dialog"><p class="modal__text">보관 기간이 지났거나 구독을 해지한 내용입니다.</p>
+    <div class="modal__actions modal__actions--stack"><button class="btn btn--primary" data-close>확인</button></div></div>
+</div>
+<script>if(location.search.indexOf('state=expired')>-1)document.body.dataset.modalOpen='expired';</script>
+
+</div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A33 기관 상세 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="app-body">
+<!-- 화면 ID: A33 / 기관 상세 -->
+<div class="phone">
+
+<header class="appbar"><a class="icon-btn" href="A32.html" aria-label="뒤로"><i data-lucide="chevron-left"></i></a><h1 class="appbar__title">기관 정보</h1></header>
+<main class="app-main">
+  <div style="text-align:center;padding:8px 0 20px">
+    <div style="display:flex;justify-content:center"><span class="logo logo--lg" aria-hidden="true">사</span></div>
+    <h2 style="font-size:var(--fs-20);margin-top:12px">사아군청</h2>
+    <p class="muted mt-4" style="margin-top:8px">사아군 주민께 군정 소식과 생활 정보를 알려 드립니다.</p>
+    <a class="btn btn--ghost btn--sm mt-4" href="A12.html"><i data-lucide="globe"></i>홈페이지</a>
+  </div>
+  <h2 class="section-title">받을 게시판</h2>
+  <p class="muted small" style="margin-bottom:4px">구독하면 기관 소식과 고른 게시판의 새 글을 받습니다.</p>
+  <label class="check"><input type="checkbox" checked><span class="check__label">공지사항</span></label>
+<label class="check"><input type="checkbox" checked><span class="check__label">고시공고</span></label>
+<label class="check"><input type="checkbox" checked><span class="check__label">행사안내</span></label>
+</main>
+<div class="app-footer">
+  <a class="btn btn--primary btn--block" href="A30.html" data-state="default"><i data-lucide="bookmark-plus"></i>구독하기</a>
+  <a class="btn btn--primary btn--block" href="A30.html" data-state="subscribed">변경 저장</a>
+  <button class="btn btn--ghost btn--block" data-open="unsub" data-state="subscribed">구독 해지</button>
+</div>
+<div class="modal-backdrop" id="unsub">
+  <div class="modal modal--os" role="dialog"><h2 class="modal__title">구독 해지</h2><p class="modal__text">구독을 해지하면 이 기관에서 받은 알림과 소식이 목록에서 사라집니다. 해지할까요?</p>
+    <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><a class="btn btn--primary" href="A30.html">해지</a></div></div>
+</div>
+</div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

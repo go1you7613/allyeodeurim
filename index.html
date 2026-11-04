@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>알려드림 프로토타입 화면 목록</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/proto.css">
+<style>
+.wrap{max-width:1080px;margin:0 auto;padding:var(--sp-10) var(--sp-5);}
+.hero h1{font-size:var(--fs-28);} .hero p{margin-top:var(--sp-2);}
+.block{margin-top:var(--sp-10);} .block__head{display:flex;gap:var(--sp-3);align-items:center;margin-bottom:var(--sp-2);}
+.block__head h2{font-size:var(--fs-20);}
+.tbl-wrap{overflow-x:auto;margin-top:var(--sp-3);}
+.list-tbl{width:100%;border-collapse:collapse;font-size:var(--fs-14);}
+.list-tbl th,.list-tbl td{border-bottom:1px solid var(--c-border);padding:var(--sp-3);text-align:left;vertical-align:middle;}
+.list-tbl th{background:var(--c-bg-subtle);font-family:var(--font-display);color:var(--c-heading);font-weight:500;white-space:nowrap;}
+.list-tbl td:first-child{white-space:nowrap;} .list-tbl a{text-decoration:underline;}
+.vrow{display:flex;gap:6px;flex-wrap:wrap;} .vrow .chip{padding:4px 10px;font-size:12px;text-decoration:none;}
+.guide{margin-top:var(--sp-6);}
+</style></head>
+<body><div class="wrap">
+<header class="hero"><h1>알려드림 프로토타입</h1>
+<p class="muted">화면 ID, 이름은 docs/02_메뉴구조도.md 기준입니다. 그레이스케일 프로토타입이며 서버 연동은 없습니다.</p></header>
+<div class="notice guide"><div>
+<p><b>보는 방법</b></p>
+<p>① 화면 이름을 누르면 해당 화면이 열립니다. 화면 안 버튼과 링크로 이동할 수 있습니다.</p>
+<p>② "상태 보기"는 같은 화면의 다른 상태(빈 목록, 오류 등)입니다. 주소 뒤 ?state= 값으로 바뀝니다.</p>
+<p>③ 앱 화면은 PC에서 휴대폰 크기(375px) 프레임으로 보입니다.</p></div></div>
+<section class="block"><div class="block__head"><h2>A. 알려드림 앱</h2><span class="badge">21개 화면</span></div>
+<p class="muted">사용자 화면. 하단 탭: 알림, 소식, 내 구독, 설정</p><div class="tbl-wrap"><table class="list-tbl"><thead><tr><th>화면 ID</th><th>메뉴</th><th>화면</th><th>상태 보기</th></tr></thead><tbody><tr><td><b>A01</b></td><td>첫 실행</td><td><a href="app/A01.html">알림 권한 안내</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A02</b></td><td>첫 실행</td><td><a href="app/A02.html">이용 방식 선택</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A03</b></td><td>첫 실행</td><td><a href="app/A03.html">비회원 구독 유실 고지 (팝업)</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A04</b></td><td>첫 실행</td><td><a href="app/A04.html">간편 로그인</a></td><td><div class="vrow"><a class="chip" href="app/A04.html?state=fail">로그인 실패</a></div></td></tr>
+<tr><td><b>A05</b></td><td>첫 실행</td><td><a href="app/A05.html">개인정보 수집 동의</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A10</b></td><td>알림</td><td><a href="app/A10.html">게시판 알림 목록</a></td><td><div class="vrow"><a class="chip" href="app/A10.html?state=nosub">구독 없음</a> <a class="chip" href="app/A10.html?state=nodata">내역 없음</a> <a class="chip" href="app/A10.html?state=push">앱 사용 중 푸시</a> <a class="chip" href="app/A10.html?state=expired">지난 푸시 터치</a> <a class="chip" href="app/A10.html?state=offline">네트워크 없음</a> <a class="chip" href="app/A10.html?state=error">서버 오류</a></div></td></tr>
+<tr><td><b>A11</b></td><td>알림</td><td><a href="app/A11.html">게시판 알림 상세</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A12</b></td><td>알림</td><td><a href="app/A12.html">기관 홈페이지 원문 (웹뷰)</a></td><td><div class="vrow"><a class="chip" href="app/A12.html?state=error">불러오기 실패</a></div></td></tr>
+<tr><td><b>A20</b></td><td>소식</td><td><a href="app/A20.html">기관 소식 목록</a></td><td><div class="vrow"><a class="chip" href="app/A20.html?state=nosub">구독 없음</a> <a class="chip" href="app/A20.html?state=nodata">내역 없음</a> <a class="chip" href="app/A20.html?state=offline">네트워크 없음</a></div></td></tr>
+<tr><td><b>A21</b></td><td>소식</td><td><a href="app/A21.html">기관 소식 상세</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A30</b></td><td>내 구독</td><td><a href="app/A30.html">구독 기관 목록</a></td><td><div class="vrow"><a class="chip" href="app/A30.html?state=nosub">구독 없음</a></div></td></tr>
+<tr><td><b>A31</b></td><td>내 구독</td><td><a href="app/A31.html">기관별 구독 설정</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A32</b></td><td>내 구독</td><td><a href="app/A32.html">기관 찾기</a></td><td><div class="vrow"><a class="chip" href="app/A32.html?state=noresult">검색 결과 없음</a></div></td></tr>
+<tr><td><b>A33</b></td><td>내 구독</td><td><a href="app/A33.html">기관 상세</a></td><td><div class="vrow"><a class="chip" href="app/A33.html?state=subscribed">구독 중</a></div></td></tr>
+<tr><td><b>A40</b></td><td>설정</td><td><a href="app/A40.html">설정 메인</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A41</b></td><td>설정</td><td><a href="app/A41.html">알림 설정</a></td><td><div class="vrow"><a class="chip" href="app/A41.html?state=osoff">휴대폰 알림 꺼짐</a></div></td></tr>
+<tr><td><b>A42</b></td><td>설정</td><td><a href="app/A42.html">계정</a></td><td><div class="vrow"><a class="chip" href="app/A42.html?state=member">회원</a></div></td></tr>
+<tr><td><b>A43</b></td><td>설정</td><td><a href="app/A43.html">앱 공지 목록</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A44</b></td><td>설정</td><td><a href="app/A44.html">앱 공지 상세</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A45</b></td><td>설정</td><td><a href="app/A45.html">이용약관, 개인정보 처리방침 (웹뷰)</a></td><td><div class="vrow"></div></td></tr>
+<tr><td><b>A46</b></td><td>설정</td><td><a href="app/A46.html">앱 정보</a></td><td><div class="vrow"></div></td></tr></tbody></table></div></section>
+<section class="block"><div class="block__head"><h2>B. 기관 관리자 웹</h2><span class="badge">14개 화면</span></div>
+<p class="muted">기관 대표 관리자, 담당자 화면 (중앙)</p><div class="tbl-wrap"><table class="list-tbl"><thead><tr><th>화면 ID</th><th>메뉴</th><th>화면</th></tr></thead><tbody><tr><td><b>B01</b></td><td>공통</td><td>로그인 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B02</b></td><td>공통</td><td>비밀번호 찾기 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B03</b></td><td>공통</td><td>비밀번호 변경 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B10</b></td><td>대시보드</td><td>대시보드 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B20</b></td><td>기관 소식 발송</td><td>기관 소식 작성 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B21</b></td><td>기관 소식 발송</td><td>예약 목록 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B22</b></td><td>기관 소식 발송</td><td>발송 결과 목록 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B23</b></td><td>기관 소식 발송</td><td>발송 결과 상세 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B30</b></td><td>구독자 현황</td><td>구독자 현황 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B40</b></td><td>기관 프로필</td><td>기관 프로필 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B50</b></td><td>사용량, 요금</td><td>사용량, 요금 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B60</b></td><td>담당자 계정 관리</td><td>담당자 목록 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B61</b></td><td>담당자 계정 관리</td><td>담당자 등록, 수정 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>B70</b></td><td>내 정보</td><td>내 정보 <span class="badge">다음 단계</span></td></tr></tbody></table></div></section>
+<section class="block"><div class="block__head"><h2>C. 로컬 관리자</h2><span class="badge">9개 화면</span></div>
+<p class="muted">기관 설치 모듈 관리 화면 (기관 내부망, 폐쇄망 동작)</p><div class="tbl-wrap"><table class="list-tbl"><thead><tr><th>화면 ID</th><th>메뉴</th><th>화면</th></tr></thead><tbody><tr><td><b>C01</b></td><td>공통</td><td>로그인 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>C10</b></td><td>연결 상태</td><td>연결 상태 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>C20</b></td><td>수집 설정</td><td>DB 연결 설정 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>C21</b></td><td>수집 설정</td><td>수집 게시판 목록 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>C22</b></td><td>수집 설정</td><td>수집 게시판 등록, 수정 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>C30</b></td><td>발송 이력</td><td>발송 이력 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>C40</b></td><td>환경 설정</td><td>중계서버 연결 정보 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>C41</b></td><td>환경 설정</td><td>관리자 계정 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>C42</b></td><td>환경 설정</td><td>로그 보관 <span class="badge">다음 단계</span></td></tr></tbody></table></div></section>
+<section class="block"><div class="block__head"><h2>D. 운영자 콘솔</h2><span class="badge">17개 화면</span></div>
+<p class="muted">우리 회사 운영자 화면</p><div class="tbl-wrap"><table class="list-tbl"><thead><tr><th>화면 ID</th><th>메뉴</th><th>화면</th></tr></thead><tbody><tr><td><b>D01</b></td><td>공통</td><td>로그인 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D10</b></td><td>대시보드</td><td>대시보드 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D20</b></td><td>기관 관리</td><td>기관 목록 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D21</b></td><td>기관 관리</td><td>기관 등록, 수정 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D22</b></td><td>기관 관리</td><td>대표 계정 발급 (팝업) <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D30</b></td><td>단가, 정산</td><td>기관별 단가 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D31</b></td><td>단가, 정산</td><td>월 정산 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D40</b></td><td>수집기 관리</td><td>수집 대상 목록 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D41</b></td><td>수집기 관리</td><td>수집 대상 등록, 수정 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D42</b></td><td>수집기 관리</td><td>수집 실패 내역 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D50</b></td><td>설치 모듈 현황</td><td>기관별 연결 상태 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D51</b></td><td>설치 모듈 현황</td><td>라이선스 발급 (팝업) <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D60</b></td><td>앱 운영</td><td>앱 공지 목록 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D61</b></td><td>앱 운영</td><td>앱 공지 등록, 수정 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D62</b></td><td>앱 운영</td><td>기관 노출 관리 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D70</b></td><td>운영자 계정 관리</td><td>운영자 목록 <span class="badge">다음 단계</span></td></tr>
+<tr><td><b>D71</b></td><td>운영자 계정 관리</td><td>운영자 등록, 수정 <span class="badge">다음 단계</span></td></tr></tbody></table></div></section>
+</div></body></html>

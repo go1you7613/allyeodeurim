@@ -1,0 +1,14 @@
+/* Paperlogy — 눈누 공개 폰트 (상업적 이용 가능). 프로토타입 제목·버튼·링크·칩 전용(--font-display)
+   사용 : 이 폴더(paperlogy/)를 프로젝트 assets/fonts/ 로 복사한 뒤
+          CSS 최상단에서 @import url("../assets/fonts/paperlogy/paperlogy.css");
+   ※ 상대경로(./)라 file:// 로 열어도 같은 폴더 안에서 로드된다. */
+@font-face{font-family:"Paperlogy";font-weight:400;font-style:normal;font-display:swap;
+  src:url("./Paperlogy-4Regular.woff2") format("woff2");}
+@font-face{font-family:"Paperlogy";font-weight:500;font-style:normal;font-display:swap;
+  src:url("./Paperlogy-5Medium.woff2") format("woff2");}
+@font-face{font-family:"Paperlogy";font-weight:600;font-style:normal;font-display:swap;
+  src:url("./Paperlogy-6SemiBold.woff2") format("woff2");}
+@font-face{font-family:"Paperlogy";font-weight:700;font-style:normal;font-display:swap;
+  src:url("./Paperlogy-7Bold.woff2") format("woff2");}
+@font-face{font-family:"Paperlogy";font-weight:800;font-style:normal;font-display:swap;
+  src:url("./Paperlogy-8ExtraBold.woff2") format("woff2");}

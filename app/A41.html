@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A41 알림 설정 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="app-body">
+<!-- 화면 ID: A41 / 알림 설정 -->
+<div class="phone">
+
+<header class="appbar"><a class="icon-btn" href="A40.html" aria-label="뒤로"><i data-lucide="chevron-left"></i></a><h1 class="appbar__title">알림 설정</h1></header>
+<main class="app-main">
+  <div class="notice" data-state="osoff" style="margin-bottom:16px"><i data-lucide="bell-off"></i>
+    <div><p>휴대폰 설정에서 알림이 꺼져 있습니다. 알림을 받으려면 설정에서 켜 주세요.</p><button class="btn btn--outline btn--sm mt-4">휴대폰 설정으로 이동</button></div></div>
+  <div class="row" style="justify-content:space-between;padding:8px 0 16px;border-bottom:1px solid var(--c-border)">
+    <div><p style="font-family:var(--font-display);color:var(--c-heading)">전체 알림</p>
+    <p class="muted small">끄면 모든 기관의 푸시를 받지 않습니다. 기관별 설정은 그대로 유지됩니다.</p></div>
+    <button class="toggle" role="switch" aria-checked="true" aria-label="전체 알림"></button>
+  </div>
+  <div class="row" style="justify-content:space-between;padding:16px 0">
+    <p style="color:var(--c-heading)">휴대폰 알림 권한</p>
+    <span class="badge" data-state="default">켜짐</span><span class="badge badge--strong" data-state="osoff">꺼짐</span>
+  </div>
+</main>
+</div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

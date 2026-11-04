@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A01 알림 권한 안내 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="app-body">
+<!-- 화면 ID: A01 / 알림 권한 안내 -->
+<div class="phone">
+
+<main class="intro">
+  <div class="intro__icon"><i data-lucide="bell-ring"></i></div>
+  <h1 class="intro__title">알림을 허용해 주세요</h1>
+  <p class="intro__text">구독한 기관의 새 글과 소식을 알림으로 받으려면 알림을 허용해 주세요. 허용하지 않아도 앱은 쓸 수 있습니다.</p>
+</main>
+<div class="app-footer">
+  <button class="btn btn--primary btn--block" data-open="os-perm">다음</button>
+</div>
+<!-- OS 알림 권한 창 (흉내) -->
+<div class="modal-backdrop" id="os-perm">
+  <div class="modal modal--os" role="dialog" aria-labelledby="os-perm-t">
+    <h2 class="modal__title" id="os-perm-t">'알려드림'에서 알림을 보내려고 합니다</h2>
+    <p class="modal__text small">알림에는 텍스트, 사운드, 아이콘 배지가 포함될 수 있습니다.</p>
+    <div class="modal__actions">
+      <a class="btn btn--outline" href="A02.html">허용 안 함</a>
+      <a class="btn btn--primary" href="A02.html">허용</a>
+    </div>
+  </div>
+</div>
+</div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

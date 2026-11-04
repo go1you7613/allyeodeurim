@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A31 기관별 구독 설정 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="app-body">
+<!-- 화면 ID: A31 / 기관별 구독 설정 -->
+<div class="phone">
+
+<header class="appbar"><a class="icon-btn" href="A30.html" aria-label="뒤로"><i data-lucide="chevron-left"></i></a><h1 class="appbar__title">가나시청</h1></header>
+<main class="app-main">
+  <div class="row" style="justify-content:space-between;padding:8px 0 16px;border-bottom:1px solid var(--c-border)">
+    <div><p style="font-family:var(--font-display);color:var(--c-heading)">이 기관 알림 받기</p>
+    <p class="muted small">끄면 게시판 알림, 기관 소식 푸시를 모두 받지 않습니다. 목록에는 계속 쌓입니다.</p></div>
+    <button class="toggle" role="switch" aria-checked="true" aria-label="이 기관 알림"></button>
+  </div>
+  <h2 class="section-title mt-6">받을 게시판</h2>
+  <p class="muted small" style="margin-bottom:4px">하나도 고르지 않으면 기관 소식만 받습니다.</p>
+  <label class="check"><input type="checkbox" checked><span class="check__label">공지사항</span></label>
+<label class="check"><input type="checkbox" checked><span class="check__label">행사안내</span></label>
+<label class="check"><input type="checkbox" checked><span class="check__label">채용정보</span></label>
+<label class="check"><input type="checkbox"><span class="check__label">고시공고</span></label>
+</main>
+<div class="app-footer">
+  <a class="btn btn--primary btn--block" href="A30.html">저장</a>
+  <button class="btn btn--ghost btn--block" data-open="unsub">구독 해지</button>
+</div>
+<div class="modal-backdrop" id="unsub">
+  <div class="modal modal--os" role="dialog"><h2 class="modal__title">구독 해지</h2><p class="modal__text">구독을 해지하면 이 기관에서 받은 알림과 소식이 목록에서 사라집니다. 해지할까요?</p>
+    <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><a class="btn btn--primary" href="A30.html">해지</a></div></div>
+</div>
+</div>
+<script src="../js/proto.js"></script>
+</body>
+</html>
