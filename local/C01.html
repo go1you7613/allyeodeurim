@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C01 로그인 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="auth-body">
+<!-- 화면 ID: C01 / 로그인 -->
+<main class="auth">
+
+<div class="auth__brand"><h1>알려드림</h1><p>로컬 관리자 (가나시청 설치 모듈)</p></div>
+<div class="notice" data-state="fail" style="margin-bottom:16px"><i data-lucide="alert-circle"></i><p>아이디 또는 비밀번호가 맞지 않습니다. (남은 횟수 2회)</p></div>
+<div class="notice" data-state="locked" style="margin-bottom:16px"><i data-lucide="lock"></i><p>로그인 5회 실패로 계정이 잠겼습니다. 설치 서버에서 초기화 명령으로 잠금을 풀어 주세요.</p></div>
+<div data-state="default fail locked">
+<form class="form" onsubmit="return false">
+  <div class="field"><label class="field__label"><span>아이디 </span></label><input class="input" placeholder="아이디"></div>
+  <div class="field"><label class="field__label"><span>비밀번호 </span></label><input class="input" type="password" placeholder="비밀번호"></div>
+  <a class="btn btn--primary btn--block" href="C10.html">로그인</a>
+</form>
+<div class="auth__links"><a href="?state=init">설치 후 첫 로그인</a></div>
+</div>
+<div data-state="init">
+  <div class="notice" style="margin-bottom:16px"><i data-lucide="key-round"></i><p>설치 직후 초기 계정으로 로그인했습니다. 비밀번호를 바꿔야 사용할 수 있습니다.</p></div>
+  <form class="form" onsubmit="return false">
+    <div class="field"><label class="field__label"><span>새 비밀번호 </span><span class="field__req">필수</span></label><input class="input" type="password"></div>
+    <div class="field"><label class="field__label"><span>새 비밀번호 확인 </span><span class="field__req">필수</span></label><input class="input" type="password"></div>
+    <ul class="rules"><li>영문, 숫자, 특수문자를 섞어 9자 이상</li><li>직전 비밀번호는 다시 쓸 수 없습니다</li><li>90일마다 바꿔야 합니다</li></ul>
+    <a class="btn btn--primary btn--block" href="C10.html">변경하고 시작</a>
+  </form>
+</div>
+<p class="muted small mt-6" style="text-align:center">기관 내부망 전용 화면입니다. 30분 동안 사용하지 않으면 자동으로 로그아웃됩니다.</p>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

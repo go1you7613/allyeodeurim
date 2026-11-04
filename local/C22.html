@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C22 수집 게시판 등록, 수정 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="local" data-menu="C22">
+<!-- 화면 ID: C22 / 수집 게시판 등록, 수정 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">수집 설정 &gt; 수집 게시판</p><h1>수집 게시판 등록, 수정</h1></div><div class="page-head__actions"><span class="badge"><i data-lucide="shield"></i>폐쇄망 동작</span></div></div>
+
+<div class="grid-2">
+<section class="panel">
+  <form class="form" onsubmit="return false">
+    <div class="field"><label class="field__label"><span>게시판명 (앱 노출 이름) </span><span class="field__req">필수</span></label><input class="input" value="공지사항"></div>
+    <div class="field"><label class="field__label"><span>대상 테이블 </span><span class="field__req">필수</span></label><input class="input" value="TB_BBS_NOTICE"></div>
+    <div class="inline"><div class="field"><label class="field__label"><span>글 번호 컬럼 </span><span class="field__req">필수</span></label><input class="input" value="BBS_SEQ"></div><div class="field"><label class="field__label"><span>제목 컬럼 </span><span class="field__req">필수</span></label><input class="input" value="TITLE"></div><div class="field"><label class="field__label"><span>등록일 컬럼 </span><span class="field__req">필수</span></label><input class="input" value="REG_DT"></div></div>
+    <div class="field"><label class="field__label"><span>추가 조건 </span><span class="field__req">필수</span></label><input class="input" value="OPEN_YN = 'Y' AND DEL_YN = 'N'"><p class="field__help">비공개 글, 삭제 글을 반드시 거르세요. 거르지 않으면 그대로 발송됩니다.</p></div>
+    <div class="field"><label class="field__label"><span>원문 링크 규칙 </span><span class="field__req">필수</span></label><input class="input" value="https://gana-city.example/notice/view?no={글번호}"><p class="field__help">{글번호} 자리에 글 번호가 들어갑니다. 기관 웹사이트 글 주소로 만들어 주세요.</p></div>
+    <div class="field"><label class="field__label"><span>수집 주기 </span><span class="field__req">필수</span></label><select class="select" style="max-width:200px"><option selected>1분</option><option>2분</option><option>3분</option><option>4분</option><option>5분</option></select></div>
+    <div class="notice notice--plain" data-state="default"><i data-lucide="info"></i><p>처음 저장할 때 지금 가장 큰 글 번호(1024)를 시작점으로 잡습니다. 그 뒤에 올라온 글만 보냅니다.</p></div>
+    <div class="form-actions"><a class="btn btn--ghost" href="C21.html">취소</a><a class="btn btn--outline" href="?state=tested"><i data-lucide="flask-conical"></i>수집 테스트</a><a class="btn btn--primary" href="C21.html">저장</a></div>
+  </form>
+</section>
+<aside class="panel">
+  <h2 class="panel__title" style="margin-bottom:8px">수집 테스트</h2>
+  <p class="muted small" style="margin-bottom:16px">최근 글 5건을 미리 봅니다. 발송하지 않습니다.</p>
+  <div data-state="default edit"><div class="empty"><i data-lucide="flask-conical"></i><p>수집 테스트를 누르면 결과가 보입니다.</p></div></div>
+  <div data-state="tested"><div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>글 번호</th><th>제목</th><th>등록일</th></tr></thead><tbody><tr><td>1024</td><td><span style="white-space:normal;display:block;min-width:180px">2026년 하반기 청년 일자리 지원사업 참여자 모집</span></td><td>2026.11.04</td></tr><tr><td>1023</td><td><span style="white-space:normal;display:block;min-width:180px">시민 걷기대회 참가 신청 안내</span></td><td>2026.11.02</td></tr><tr><td>1022</td><td><span style="white-space:normal;display:block;min-width:180px">구청 민원실 운영 시간 변경 안내</span></td><td>2026.10.28</td></tr><tr><td>1021</td><td><span style="white-space:normal;display:block;min-width:180px">가을 문화축제 일정 안내</span></td><td>2026.10.20</td></tr><tr><td>1020</td><td><span style="white-space:normal;display:block;min-width:180px">도서관 휴관일 변경 안내</span></td><td>2026.10.15</td></tr></tbody></table></div></div>
+  <p class="field__help mt-4">저장하면 게시판명과 사용 여부를 중앙으로 보내 앱 기관 정보 화면에 보입니다.</p>
+</aside>
+</div>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

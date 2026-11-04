@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C21 수집 게시판 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="local" data-menu="C21">
+<!-- 화면 ID: C21 / 수집 게시판 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">수집 설정</p><h1>수집 게시판</h1></div><div class="page-head__actions"><span class="badge"><i data-lucide="shield"></i>폐쇄망 동작</span> <a class="btn btn--primary" href="C22.html"><i data-lucide="plus"></i>수집 게시판 등록</a></div></div>
+
+<section class="panel">
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>게시판명 (앱 노출)</th><th>대상 테이블</th><th>수집 주기</th><th>마지막 수집</th><th>결과</th><th>중앙 반영</th><th>사용</th><th></th></tr></thead><tbody><tr><td>공지사항</td><td>TB_BBS_NOTICE</td><td>1분</td><td>2026.11.04 14:20</td><td>성공</td><td>반영</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="공지사항 사용"></button></td><td><a class="btn btn--outline btn--sm" href="C22.html?state=edit">수정</a></td></tr><tr><td>행사안내</td><td>TB_BBS_EVENT</td><td>5분</td><td>2026.11.04 14:18</td><td>성공</td><td>반영</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="행사안내 사용"></button></td><td><a class="btn btn--outline btn--sm" href="C22.html?state=edit">수정</a></td></tr><tr><td>채용정보</td><td>TB_BBS_JOB</td><td>5분</td><td>2026.11.04 14:16</td><td>성공</td><td>반영</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="채용정보 사용"></button></td><td><a class="btn btn--outline btn--sm" href="C22.html?state=edit">수정</a></td></tr><tr><td>고시공고</td><td>TB_BBS_GOSI</td><td>5분</td><td>2026.10.30 09:00</td><td>-</td><td><span class="badge badge--strong">대기</span></td><td><button class="toggle" role="switch" aria-checked="false" aria-label="고시공고 사용"></button></td><td><a class="btn btn--outline btn--sm" href="C22.html?state=edit">수정</a></td></tr></tbody></table></div>
+  <p class="field__help mt-4">사용을 끄면 수집을 멈추고 앱에서 게시판을 숨깁니다. 다시 켜면 꺼져 있던 동안의 글은 보내지 않습니다.</p>
+  <p class="field__help">중앙 반영 "대기"는 중계서버와 연결되면 자동으로 보냅니다.</p>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

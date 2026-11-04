@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C30 발송 이력 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="local" data-menu="C30">
+<!-- 화면 ID: C30 / 발송 이력 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">수집 설정</p><h1>발송 이력</h1></div><div class="page-head__actions"><span class="badge"><i data-lucide="shield"></i>폐쇄망 동작</span></div></div>
+
+<section class="panel">
+  <form class="filter" onsubmit="return false">
+    <label>기간<span class="inline"><input class="input" type="date" value="2026-10-05"><input class="input" type="date" value="2026-11-04"></span></label>
+    <label>게시판<select class="select"><option>전체</option><option>공지사항</option><option>행사안내</option><option>채용정보</option><option>고시공고</option></select></label>
+    <label>결과<select class="select"><option>전체</option><option>대기</option><option>성공</option><option>실패</option></select></label>
+    <button class="btn btn--primary btn--sm"><i data-lucide="search"></i>검색</button>
+  </form>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>수집 일시</th><th>게시판</th><th>제목</th><th>전송 결과</th><th>실패 사유</th><th></th></tr></thead><tbody><tr><td>2026.11.04 14:20</td><td>공지사항</td><td><span style="white-space:normal;display:block;min-width:180px">2026년 하반기 청년 일자리 지원사업 참여자 모집</span></td><td><span class="badge">성공</span></td><td>-</td><td></td></tr><tr><td>2026.11.04 13:05</td><td>채용정보</td><td><span style="white-space:normal;display:block;min-width:180px">기간제 근로자 채용 공고 (행정 보조)</span></td><td><span class="badge badge--strong">대기</span></td><td>재전송 대기 (2회째, 14:35 예정)</td><td></td></tr><tr><td>2026.11.04 09:02</td><td>고시공고</td><td><span style="white-space:normal;display:block;min-width:180px">도로 정비 공사에 따른 통행 제한 안내</span></td><td><span class="badge badge--solid">실패</span></td><td>중계서버 연결 실패</td><td><button class="btn btn--outline btn--sm">재전송</button></td></tr><tr><td>2026.11.02 09:10</td><td>행사안내</td><td><span style="white-space:normal;display:block;min-width:180px">시민 걷기대회 참가 신청 안내</span></td><td><span class="badge">성공</span></td><td>-</td><td></td></tr><tr><td>2026.10.28 16:40</td><td>공지사항</td><td><span style="white-space:normal;display:block;min-width:180px">구청 민원실 운영 시간 변경 안내</span></td><td><span class="badge">성공</span></td><td>-</td><td></td></tr></tbody></table></div>
+  <div class="tbl-foot"><span>전체 318건</span><nav class="pager" aria-label="페이지">
+<a href="#" aria-label="이전"><i data-lucide="chevron-left"></i></a><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a>
+<a href="#" aria-label="다음"><i data-lucide="chevron-right"></i></a></nav></div>
+  <p class="field__help mt-4">전송 실패 시 1분, 5분, 30분 간격으로 자동 재전송합니다. 그래도 실패하면 "실패"로 표시하고 재전송 버튼으로 보낼 수 있습니다 (중계서버 연결 필요).</p>
+  <p class="field__help">이용자 휴대폰 도달 결과는 표시하지 않습니다 (중앙 기준).</p>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>
