@@ -335,3 +335,90 @@ textarea.input{resize:vertical;min-height:160px;line-height:var(--lh-loose);}
 /* 관리자 화면 팝업은 화면 전체 기준 */
 .admin-body .modal-backdrop,.auth-body .modal-backdrop{position:fixed;}
 .admin-body .modal,.auth-body .modal{max-width:480px;}
+
+/* =========================================================
+   ⑥ 프로토타입 안내 바, 기능설명 팝업, 화면 목록(index)
+   - 참고: 잡아바 UI/UX 프로토타입의 안내 바, 기능정의 모달 구성
+   ========================================================= */
+/* 안내 바가 맨 위에 오도록 세로 배치 */
+.app-body{flex-direction:column;align-items:center;}
+.auth-body{flex-direction:column;justify-content:flex-start;padding:0;}
+.auth-body > main.auth{margin:auto 0;}
+.auth-body > main.auth{margin-top:var(--sp-10);margin-bottom:var(--sp-10);}
+.admin-body .admin-top{top:0;}
+
+.proto-bar{position:relative;z-index:40;width:100%;display:flex;align-items:center;gap:var(--sp-3);
+  padding:8px var(--sp-5);background:var(--c-ink);color:var(--c-on-ink);font-size:var(--fs-12);min-height:44px;}
+.proto-bar__left{display:flex;align-items:center;gap:var(--sp-2);flex:none;}
+.proto-bar__title{font-family:var(--font-display);font-weight:var(--fw-bold);letter-spacing:.5px;white-space:nowrap;}
+.proto-bar__btn{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border:1px solid rgba(255,255,255,.7);border-radius:var(--r-full);
+  color:var(--c-on-ink);background:transparent;font-family:var(--font-display);font-size:var(--fs-12);cursor:pointer;white-space:nowrap;}
+.proto-bar__btn svg.lucide{width:14px;height:14px;}
+.proto-bar__btn:hover{background:var(--c-on-ink);color:var(--c-ink);}
+.proto-bar__btn--solid{background:var(--c-on-ink);color:var(--c-ink);border-color:var(--c-on-ink);font-weight:var(--fw-bold);}
+.proto-bar__btn--solid:hover{opacity:.85;}
+.proto-bar__main{flex:1;min-width:0;display:flex;align-items:center;gap:var(--sp-2);}
+.proto-bar__id{font-family:var(--font-display);font-weight:var(--fw-bold);padding:2px 8px;border:1px solid rgba(255,255,255,.7);border-radius:var(--r-sm);}
+.proto-bar__name{font-family:var(--font-display);font-weight:var(--fw-bold);white-space:nowrap;}
+.proto-bar__area{opacity:.7;white-space:nowrap;}
+.proto-bar__desc{opacity:.8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
+@media (max-width:1023px){.proto-bar__area{display:none;}}
+@media (max-width:767px){
+  .proto-bar{flex-wrap:wrap;padding:8px var(--sp-4);}
+  .proto-bar__main{order:3;flex-basis:100%;flex-wrap:wrap;}
+  .proto-bar__desc{white-space:normal;flex-basis:100%;}
+  .proto-bar > .proto-bar__btn--solid{margin-left:auto;}
+}
+
+/* 기능설명 팝업 */
+.fmodal-backdrop{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.5);display:none;align-items:flex-start;justify-content:center;
+  padding:var(--sp-10) var(--sp-4);overflow-y:auto;}
+.fmodal-backdrop.is-open{display:flex;}
+body.is-fmodal-open{overflow:hidden;}
+.fmodal{width:100%;max-width:880px;background:var(--c-bg);border-radius:var(--r-lg);padding:var(--sp-8);box-shadow:var(--sh-lg);}
+.fmodal__head{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-4);}
+.fm-eyebrow{display:block;font-size:11px;font-weight:var(--fw-bold);letter-spacing:.12em;color:var(--c-muted);margin-bottom:6px;}
+.fmodal__head h2{font-size:var(--fs-24);}
+.fmodal__meta{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-3);}
+.fm-sec{margin-top:var(--sp-6);}
+.fm-sec > h3{font-size:var(--fs-16);margin-bottom:var(--sp-3);}
+.fm-purpose{font-size:var(--fs-14);line-height:var(--lh-loose);color:var(--c-text);padding:var(--sp-4);background:var(--c-bg-subtle);border-radius:var(--r-md);}
+.fm-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);}
+.fm-item{border:1px solid var(--c-border);border-radius:var(--r-md);padding:var(--sp-4);}
+.fm-item__head{display:flex;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-1);}
+.fm-item__head strong{font-family:var(--font-display);color:var(--c-heading);font-size:var(--fs-14);}
+.fm-id{font-family:var(--font-display);font-size:11px;font-weight:var(--fw-bold);color:var(--c-on-ink);background:var(--c-ink);padding:2px 6px;border-radius:var(--r-sm);white-space:nowrap;}
+.fm-desc{font-size:var(--fs-14);color:var(--c-text);}
+.fm-rules{margin:var(--sp-2) 0 0;padding-left:var(--sp-4);font-size:13px;color:var(--c-text);line-height:var(--lh-normal);}
+.fm-rules li{margin-bottom:2px;}
+.fm-sub{font-size:var(--fs-12);color:var(--c-muted);margin-top:var(--sp-2);}
+.fm-sub b{color:var(--c-heading);font-weight:var(--fw-medium);margin-right:4px;}
+.fm-sep{display:inline-block;width:1px;height:10px;background:var(--c-border-strong);margin:0 8px;}
+.fm-notice{margin-top:var(--sp-6);padding:var(--sp-3) var(--sp-4);border-left:3px solid var(--c-ink);background:var(--c-bg-subtle);font-size:var(--fs-12);color:var(--c-muted);}
+.fmodal__actions{display:flex;justify-content:flex-end;margin-top:var(--sp-5);}
+.vrow{display:flex;gap:6px;flex-wrap:wrap;}
+.vrow .chip{padding:4px 10px;font-size:var(--fs-12);}
+@media (max-width:767px){.fmodal{padding:var(--sp-5);}.fm-list{grid-template-columns:1fr;}.fmodal__head h2{font-size:var(--fs-20);}}
+
+/* 화면 목록 (index) */
+.idx-body{background:var(--c-bg);}
+.idx-wrap{max-width:1180px;margin:0 auto;padding:var(--sp-10) var(--sp-5);}
+.idx-eyebrow{font-size:var(--fs-12);font-weight:var(--fw-bold);letter-spacing:.12em;color:var(--c-muted);margin-bottom:var(--sp-2);}
+.idx-head h1{font-size:var(--fs-32);margin-bottom:var(--sp-2);}
+.idx-meta{display:flex;gap:var(--sp-4);flex-wrap:wrap;margin-top:var(--sp-4);font-size:var(--fs-14);color:var(--c-text);}
+.idx-meta b{font-family:var(--font-display);color:var(--c-heading);margin-right:4px;}
+.idx-guide{margin-top:var(--sp-6);}
+.idx-tabs{margin-top:var(--sp-8);overflow-x:auto;gap:var(--sp-2);}
+.idx-tab{display:inline-flex;align-items:center;gap:var(--sp-2);padding:14px 16px;white-space:nowrap;}
+.idx-tab b{font-family:var(--font-display);}
+.idx-tab__cnt{font-size:var(--fs-12);padding:1px 8px;border-radius:var(--r-full);background:var(--c-bg-subtle);color:var(--c-text);font-weight:var(--fw-medium);}
+.idx-tab[aria-selected="true"] .idx-tab__cnt{background:var(--c-ink);color:var(--c-on-ink);}
+.idx-panel{padding-top:var(--sp-6);}
+.idx-panel__head{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--sp-4);margin-bottom:var(--sp-4);flex-wrap:wrap;}
+.idx-panel__head h2{font-size:var(--fs-20);margin-bottom:var(--sp-1);}
+.idx-tbl td{vertical-align:top;}
+.idx-tbl td.wrap{min-width:320px;}
+.idx-desc{font-size:var(--fs-12);color:var(--c-muted);margin-top:4px;line-height:var(--lh-normal);}
+/* 보정: 앱 화면은 안내 바를 맨 위에 붙이고 휴대폰 프레임만 띄움, 처리 규칙은 번호가 이미 있어 점 표시 없음 */
+@media (min-width:768px){ .app-body{padding:0 0 var(--sp-6);} .app-body .phone{margin-top:var(--sp-6);} }
+.fm-rules{list-style:none;padding-left:0;}

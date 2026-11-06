@@ -211,6 +211,80 @@
     sync();
   });
 
+  // ⑨ 프로토타입 안내 바 + 기능설명 팝업 (데이터: js/features.js의 PROTO_DATA)
+  var PD = window.PROTO_DATA;
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  var sid = (location.pathname.split('/').pop() || '').replace('.html', '');
+  var scr = PD && PD.screens[sid];
+  if (scr) {
+    var code = sid.charAt(0), ar = PD.areas[code];
+    var pbar = document.createElement('div');
+    pbar.className = 'proto-bar';
+    pbar.innerHTML =
+      '<div class="proto-bar__left"><span class="proto-bar__title">프로토타입</span>' +
+      '<a class="proto-bar__btn" href="../index.html?tab=' + code + '"><i data-lucide="layout-grid"></i>화면 목록</a></div>' +
+      '<div class="proto-bar__main"><span class="proto-bar__id">' + sid + '</span><span class="proto-bar__name">' + esc(scr.title) + '</span>' +
+      '<span class="proto-bar__area">' + esc(ar.name) + '</span><span class="proto-bar__desc">' + esc(scr.purpose) + '</span></div>' +
+      '<button type="button" class="proto-bar__btn proto-bar__btn--solid" data-feature-open="' + sid + '"><i data-lucide="file-text"></i>기능설명</button>';
+    body.insertBefore(pbar, body.firstChild);
+  }
+  // 기능설명 팝업 (화면, 화면 목록 공통). data-feature-open="화면ID" 버튼으로 엶
+  function featureHtml(id) {
+    var s = PD.screens[id], a = PD.areas[id.charAt(0)];
+    var base = (sid === id) ? '' : a.folder + '/';
+    var items = s.functions.map(function (f) {
+      var rules = f.rules.length ? '<ul class="fm-rules">' + f.rules.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul>' : '';
+      var inputs = (f.inputs.length && f.inputs.join('').indexOf('없음') !== 0) ? '<p class="fm-sub"><b>표시, 입력</b> ' + esc(f.inputs.join(', ')) + '</p>' : '';
+      var extraLabel = f.doc === '03' ? '비회원 / 회원' : (id.charAt(0) === 'C' ? '폐쇄망' : '권한');
+      return '<li class="fm-item"><div class="fm-item__head"><span class="fm-id">' + f.id + '</span><strong>' + esc(f.name) + '</strong></div>' +
+        '<p class="fm-desc">' + esc(f.desc) + '</p>' + inputs + rules +
+        '<p class="fm-sub"><b>관련 데이터</b> ' + esc(f.data) + '<span class="fm-sep"></span><b>' + extraLabel + '</b> ' + esc(f.extra) + '</p></li>';
+    }).join('');
+    var states = '<a class="chip" href="' + base + id + '.html">기본</a>' + s.states.map(function (st) {
+      return '<a class="chip" href="' + base + id + '.html?state=' + st[0] + '">' + esc(st[1]) + '</a>';
+    }).join('');
+    var doc = s.functions[0].doc === '03' ? '03 기능정의서 (사용자)' : '04 기능정의서 (관리자)';
+    return '<div class="fmodal" role="dialog" aria-modal="true" aria-labelledby="fm-title">' +
+      '<div class="fmodal__head"><div><span class="fm-eyebrow">SCREEN FUNCTION</span><h2 id="fm-title">' + id + ' ' + esc(s.title) + ' 기능설명</h2></div>' +
+      '<button type="button" class="icon-btn" data-feature-close aria-label="닫기"><i data-lucide="x"></i></button></div>' +
+      '<div class="fmodal__meta"><span class="badge badge--solid">' + esc(a.name) + '</span><span class="badge">' + esc(a.kind) + '</span>' +
+      '<span class="badge">' + esc(s.menu) + '</span><span class="badge">기능 ' + s.functions.length + '개</span></div>' +
+      '<section class="fm-sec"><h3>화면 설명</h3><p class="fm-purpose">' + esc(s.purpose) + '</p></section>' +
+      '<section class="fm-sec"><h3>주요 기능</h3><ol class="fm-list">' + items + '</ol></section>' +
+      '<section class="fm-sec"><h3>화면 상태 보기</h3><div class="vrow">' + states + '</div></section>' +
+      '<p class="fm-notice">기준 문서: 02 메뉴구조도, ' + doc + '. 프로토타입의 예시 데이터와 동작은 실제 개발 결과와 다를 수 있습니다.</p>' +
+      '<div class="fmodal__actions"><button type="button" class="btn btn--primary" data-feature-close>확인</button></div></div>';
+  }
+  var fback = null, fReturn = null;
+  function openFeature(id, trigger) {
+    if (!PD || !PD.screens[id]) return;
+    if (!fback) { fback = document.createElement('div'); fback.className = 'fmodal-backdrop'; body.appendChild(fback); }
+    fback.innerHTML = featureHtml(id);
+    fback.classList.add('is-open');
+    body.classList.add('is-fmodal-open');
+    fReturn = trigger;
+    if (window.lucide) window.lucide.createIcons();
+    var c = fback.querySelector('[data-feature-close]'); if (c) c.focus();
+  }
+  function closeFeature() {
+    if (!fback || !fback.classList.contains('is-open')) return;
+    fback.classList.remove('is-open'); body.classList.remove('is-fmodal-open');
+    if (fReturn) fReturn.focus();
+  }
+  document.addEventListener('click', function (e) {
+    var o = e.target.closest('[data-feature-open]');
+    if (o) { e.preventDefault(); openFeature(o.getAttribute('data-feature-open'), o); return; }
+    if (e.target.closest('[data-feature-close]') || e.target === fback) closeFeature();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeFeature(); });
+
+  // ⑩ 화면 목록 탭: 주소 뒤 ?tab=B 처럼 붙이면 해당 시스템 탭으로 시작
+  var tabKey = new URLSearchParams(location.search).get('tab');
+  if (tabKey) {
+    var tb = document.querySelector('[role="tab"][data-tab-key="' + tabKey + '"]');
+    if (tb) tb.click();
+  }
+
   // ⑥ 아이콘
   if (window.lucide) window.lucide.createIcons();
 })();
