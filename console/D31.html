@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D31 월 정산 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="console" data-menu="D31">
+<!-- 화면 ID: D31 / 월 정산 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">기관</p><h1>월 정산</h1></div></div>
+
+<section class="panel">
+  <div class="filter" style="justify-content:space-between">
+    <label>정산 월<select class="select"><option>2026.10</option><option>2026.09</option><option>2026.08</option></select></label>
+    <div class="row"><button class="btn btn--outline btn--sm"><i data-lucide="download"></i>정산표 내려받기 (엑셀)</button>
+      <button class="btn btn--primary btn--sm" data-open="confirm"><i data-lucide="check"></i>선택 기관 정산 확정</button></div>
+  </div>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th></th><th>기관</th><th class="num">발송 횟수</th><th class="num">성공 건수</th><th class="num">청구 금액</th><th>상태</th></tr></thead><tbody><tr><td><input type="checkbox" aria-label="선택" disabled></td><td>가나시청</td><td class="num">14</td><td class="num">61,802</td><td class="num">494,416원</td><td><span class="badge">확정</span></td></tr><tr><td><input type="checkbox" aria-label="선택" disabled></td><td>다라구청</td><td class="num">9</td><td class="num">35,110</td><td class="num">280,880원</td><td><span class="badge">확정</span></td></tr><tr><td><input type="checkbox" aria-label="선택"></td><td>마바도청</td><td class="num">12</td><td class="num">72,430</td><td class="num">507,010원</td><td><span class="badge badge--strong">집계</span></td></tr><tr><td><input type="checkbox" aria-label="선택"></td><td>사아군청</td><td class="num">5</td><td class="num">4,980</td><td class="num">0원</td><td><span class="badge badge--strong">집계</span></td></tr></tbody></table></div>
+  <p class="field__help mt-4">매월 1일 지난달 사용량을 자동 집계합니다. 청구 금액 = 기관 소식별 (성공 건수 × 발송 시점 단가)의 합.</p>
+</section>
+</main>
+<div class="modal-backdrop" id="confirm"><div class="modal" role="dialog" aria-labelledby="confirm-t">
+  <h2 class="modal__title" id="confirm-t">정산을 확정할까요?</h2><p class="modal__text">확정하면 수정할 수 없고, 기관 관리자 사용량 화면에 청구 금액이 표시됩니다.</p>
+  <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><a class="btn btn--primary" href="D31.html">확정</a></div></div></div>
+<script src="../js/proto.js"></script>
+</body>
+</html>

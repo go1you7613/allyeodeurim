@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D62 기관 노출 관리 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="console" data-menu="D62">
+<!-- 화면 ID: D62 / 기관 노출 관리 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">앱 운영</p><h1>기관 노출 관리</h1></div></div>
+
+<section class="panel">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-tab-target="t-expose">노출 관리</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab-target="t-cat">분류 관리</button>
+  </div>
+  <div id="t-expose" class="mt-6">
+    <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>기관</th><th>분류</th><th>앱 기관 찾기 노출</th></tr></thead><tbody><tr><td>가나시청</td><td>광역</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="가나시청 노출"></button></td></tr><tr><td>다라구청</td><td>기초</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="다라구청 노출"></button></td></tr><tr><td>마바도청</td><td>광역</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="마바도청 노출"></button></td></tr><tr><td>사아군청</td><td>기초</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="사아군청 노출"></button></td></tr><tr><td>자차공단</td><td>공공기관</td><td><button class="toggle" role="switch" aria-checked="false" aria-label="자차공단 노출"></button></td></tr></tbody></table></div>
+    <p class="field__help mt-4">숨기면 앱 기관 찾기와 검색에서 보이지 않습니다. 이미 구독한 이용자는 계속 받습니다.</p>
+  </div>
+  <div id="t-cat" class="mt-6" hidden>
+    <div class="row" style="justify-content:flex-end;margin-bottom:12px"><button class="btn btn--outline btn--sm"><i data-lucide="plus"></i>분류 추가</button></div>
+    <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>순서</th><th>분류명</th><th class="num">소속 기관 수</th><th>사용 여부</th><th></th></tr></thead><tbody><tr><td>1</td><td>광역</td><td class="num">2</td><td>사용</td><td><button class="btn btn--ghost btn--sm">수정</button></td></tr><tr><td>2</td><td>기초</td><td class="num">2</td><td>사용</td><td><button class="btn btn--ghost btn--sm">수정</button></td></tr><tr><td>3</td><td>공공기관</td><td class="num">1</td><td>사용</td><td><button class="btn btn--ghost btn--sm">수정</button></td></tr><tr><td>4</td><td>교육기관</td><td class="num">0</td><td><span class="badge">사용 안 함</span></td><td><button class="btn btn--ghost btn--sm">수정</button></td></tr></tbody></table></div>
+    <p class="field__help mt-4">기관이 속한 분류는 지울 수 없고 "사용 안 함"만 할 수 있습니다.</p>
+  </div>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

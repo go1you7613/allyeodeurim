@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D70 운영자 계정 관리 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="console" data-menu="D70">
+<!-- 화면 ID: D70 / 운영자 계정 관리 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">계정</p><h1>운영자 계정 관리</h1></div><div class="page-head__actions"><a class="btn btn--primary" href="D71.html"><i data-lucide="user-plus"></i>운영자 등록</a></div></div>
+
+<section class="panel">
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>아이디</th><th>이름</th><th class="num">허용 IP 수</th><th>사용 여부</th><th>잠금</th><th>마지막 로그인</th><th></th></tr></thead><tbody><tr><td>op_admin1</td><td>운영자1</td><td class="num">2</td><td>사용</td><td>-</td><td>2026.11.06 09:01</td><td><a class="btn btn--outline btn--sm" href="D71.html?state=edit">수정</a></td></tr><tr><td>op_admin2</td><td>운영자2</td><td class="num">1</td><td>사용</td><td><span class="badge badge--strong">잠김</span></td><td>2026.11.03 18:22</td><td><a class="btn btn--outline btn--sm" href="D71.html?state=edit">수정</a></td></tr><tr><td>op_old</td><td>운영자3</td><td class="num">1</td><td><span class="badge">사용 중지</span></td><td>-</td><td>2026.08.30 11:10</td><td><a class="btn btn--outline btn--sm" href="D71.html?state=edit">수정</a></td></tr></tbody></table></div>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

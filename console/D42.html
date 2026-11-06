@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D42 수집 실패 내역 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="console" data-menu="D42">
+<!-- 화면 ID: D42 / 수집 실패 내역 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">연동</p><h1>수집 실패 내역</h1></div></div>
+
+<section class="panel">
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>일시</th><th>기관</th><th>게시판</th><th>실패 사유</th><th class="num">연속 실패</th><th></th></tr></thead><tbody><tr><td>2026.11.04 14:10</td><td>사아군청</td><td>고시공고</td><td><span class="badge">규칙 불일치</span></td><td class="num">4</td><td><a class="btn btn--outline btn--sm" href="D41.html?state=edit">규칙 수정</a></td></tr><tr><td>2026.11.04 14:05</td><td>카타재단</td><td>공지사항</td><td><span class="badge">차단</span></td><td class="num">3</td><td><a class="btn btn--outline btn--sm" href="D41.html?state=edit">규칙 수정</a></td></tr><tr><td>2026.11.04 13:05</td><td>사아군청</td><td>고시공고</td><td><span class="badge">규칙 불일치</span></td><td class="num">3</td><td><a class="btn btn--outline btn--sm" href="D41.html?state=edit">규칙 수정</a></td></tr><tr><td>2026.11.03 22:40</td><td>자차공단</td><td>공지사항</td><td><span class="badge">접속 실패</span></td><td class="num">1</td><td><a class="btn btn--outline btn--sm" href="D41.html?state=edit">규칙 수정</a></td></tr></tbody></table></div>
+  <div class="tbl-foot"><span>전체 23건</span><nav class="pager" aria-label="페이지">
+<a href="#" aria-label="이전"><i data-lucide="chevron-left"></i></a><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a>
+<a href="#" aria-label="다음"><i data-lucide="chevron-right"></i></a></nav></div>
+  <p class="field__help mt-4">같은 대상이 3회 연속 실패하면 대시보드에 표시합니다. 차단은 기관에 수집 IP 허용을 요청하세요.</p>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

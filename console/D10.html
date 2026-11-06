@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D10 대시보드 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="console" data-menu="D10">
+<!-- 화면 ID: D10 / 대시보드 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">운영자 콘솔</p><h1>대시보드</h1></div></div>
+
+<div class="stat-grid">
+  <a class="stat" href="D20.html"><div class="stat__num">14<span class="stat__unit">곳</span></div><div class="stat__label">기관 (시범 4, 유료 9, 종료 1)</div></a>
+  <div class="stat"><div class="stat__num">30,252<span class="stat__unit">명</span></div><div class="stat__label">앱 이용자 (비회원 21,340, 회원 8,912)</div></div>
+  <a class="stat" href="D42.html"><div class="stat__num">2<span class="stat__unit">건</span></div><div class="stat__label">수집 실패 (3회 연속)</div></a>
+  <a class="stat" href="D50.html"><div class="stat__num">1<span class="stat__unit">건</span></div><div class="stat__label">설치 모듈 끊김</div></a>
+</div>
+<section class="panel">
+  <div class="panel__head"><h2 class="panel__title">최근 7일 발송량</h2>
+    <div class="legend"><span><i style="background:var(--c-ink)"></i>게시판 알림</span><span><i style="background:var(--c-border-strong)"></i>기관 소식</span></div></div>
+  <div class="bars" style="height:140px"><span style="height:62%" title="10.29 게시판 알림"></span><span style="height:71%" title="10.30 게시판 알림"></span><span style="height:55%" title="10.31 게시판 알림"></span><span style="height:40%" title="11.01 게시판 알림"></span><span style="height:38%" title="11.02 게시판 알림"></span><span style="height:80%" title="11.03 게시판 알림"></span><span style="height:90%" title="11.04 게시판 알림"></span></div>
+  <div class="bars mt-4" style="height:100px"><span class="is-low" style="height:30%" title="10.29 기관 소식"></span><span class="is-low" style="height:45%" title="10.30 기관 소식"></span><span class="is-low" style="height:20%" title="10.31 기관 소식"></span><span class="is-low" style="height:60%" title="11.01 기관 소식"></span><span class="is-low" style="height:10%" title="11.02 기관 소식"></span><span class="is-low" style="height:35%" title="11.03 기관 소식"></span><span class="is-low" style="height:55%" title="11.04 기관 소식"></span></div>
+  <div class="bars-axis"><span>10.29</span><span>11.01</span><span>11.04</span></div>
+</section>
+<div class="grid-2" style="grid-template-columns:1fr 1fr">
+<section class="panel">
+  <div class="panel__head"><h2 class="panel__title">수집 실패</h2><a class="btn btn--ghost btn--sm" href="D42.html">전체 보기<i data-lucide="chevron-right"></i></a></div>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>기관</th><th>게시판</th><th>사유</th><th class="num">연속 실패</th></tr></thead><tbody><tr><td>사아군청</td><td>고시공고</td><td><span class="badge">규칙 불일치</span></td><td class="num">4</td></tr><tr><td>카타재단</td><td>공지사항</td><td><span class="badge">차단</span></td><td class="num">3</td></tr></tbody></table></div>
+</section>
+<section class="panel">
+  <div class="panel__head"><h2 class="panel__title">설치 모듈 끊김</h2><a class="btn btn--ghost btn--sm" href="D50.html">전체 보기<i data-lucide="chevron-right"></i></a></div>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>기관</th><th>서버</th><th>마지막 접속</th></tr></thead><tbody><tr><td>마바도청</td><td>maba-was-01</td><td>2026.11.04 12:40</td></tr></tbody></table></div>
+</section>
+</div>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

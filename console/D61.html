@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D61 앱 공지 등록, 수정 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="console" data-menu="D61">
+<!-- 화면 ID: D61 / 앱 공지 등록, 수정 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">앱 운영 &gt; 앱 공지</p><h1>앱 공지 등록, 수정</h1></div></div>
+
+<section class="panel" style="max-width:860px">
+  <form class="form" onsubmit="return false">
+    <div class="field"><label class="field__label"><span>제목 <span class="field__req">필수</span></span><span class="field__count" data-count-for="ntt"></span></label><input class="input" id="ntt" maxlength="100" value="서버 점검 안내 (11.20 새벽)"></div>
+    <div class="field"><label class="field__label"><span>내용 </span><span class="field__req">필수</span></label><textarea class="input">11월 20일 새벽 2시부터 4시까지 서버 점검으로 알림이 늦게 도착할 수 있습니다.</textarea></div>
+    <div class="inline"><div class="field"><label class="field__label"><span>게시 시작 </span><span class="field__req">필수</span></label><input class="input" type="datetime-local" value="2026-11-15T09:00"></div><div class="field"><label class="field__label"><span>게시 종료 </span><span class="field__req">필수</span></label><input class="input" type="datetime-local" value="2026-11-20T06:00"></div></div>
+    <div class="form-actions"><a class="btn btn--ghost" href="D60.html">취소</a><a class="btn btn--primary" href="D60.html">저장</a></div>
+  </form>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

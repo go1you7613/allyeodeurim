@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D40 수집기 관리 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="console" data-menu="D40">
+<!-- 화면 ID: D40 / 수집기 관리 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">연동</p><h1>수집기 관리</h1></div><div class="page-head__actions"><a class="btn btn--primary" href="D41.html"><i data-lucide="plus"></i>수집 대상 등록</a></div></div>
+
+<section class="panel">
+  <form class="filter" onsubmit="return false">
+    <label>기관<select class="select"><option>전체</option><option>사아군청</option><option>자차공단</option></select></label>
+    <label>결과<select class="select"><option>전체</option><option>성공</option><option>실패</option></select></label>
+    <button class="btn btn--primary btn--sm"><i data-lucide="search"></i>검색</button>
+  </form>
+  <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>기관</th><th>게시판명</th><th>방식</th><th>마지막 수집</th><th>결과</th><th class="num">연속 실패</th><th>사용</th><th></th></tr></thead><tbody><tr><td>사아군청</td><td>공지사항</td><td>RSS</td><td>2026.11.04 14:15</td><td><span class="badge">성공</span></td><td class="num">0</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="사용"></button></td><td><a class="btn btn--outline btn--sm" href="D41.html?state=edit">수정</a></td></tr><tr><td>사아군청</td><td>고시공고</td><td>목록 규칙</td><td>2026.11.04 14:10</td><td><span class="badge badge--solid">실패</span></td><td class="num">4</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="사용"></button></td><td><a class="btn btn--outline btn--sm" href="D41.html?state=edit">수정</a></td></tr><tr><td>자차공단</td><td>공지사항</td><td>RSS</td><td>2026.11.04 14:12</td><td><span class="badge">성공</span></td><td class="num">0</td><td><button class="toggle" role="switch" aria-checked="true" aria-label="사용"></button></td><td><a class="btn btn--outline btn--sm" href="D41.html?state=edit">수정</a></td></tr><tr><td>카타재단</td><td>공지사항</td><td>목록 규칙</td><td>2026.11.04 14:05</td><td><span class="badge badge--solid">실패</span></td><td class="num">3</td><td><button class="toggle" role="switch" aria-checked="false" aria-label="사용"></button></td><td><a class="btn btn--outline btn--sm" href="D41.html?state=edit">수정</a></td></tr></tbody></table></div>
+  <p class="field__help mt-4">설치 모듈이 없는 시범기관의 공개 게시판을 중앙에서 수집합니다. 목록 1페이지 또는 RSS만 읽고 본문은 가져오지 않습니다.</p>
+</section>
+</main>
+
+<script src="../js/proto.js"></script>
+</body>
+</html>

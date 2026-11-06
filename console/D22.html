@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D22 대표 계정 발급 | 알려드림 프로토타입</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/proto.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-area="console" data-menu="D22" data-modal-open="issue">
+<!-- 화면 ID: D22 / 대표 계정 발급 -->
+<main class="admin-main">
+  <div class="page-head"><div><p class="crumb">기관 &gt; 기관 관리</p><h1>대표 계정 발급</h1></div></div>
+
+<div class="grid-2">
+<section class="panel">
+  <form class="form" onsubmit="return false">
+    <div data-state="default edit"><div class="field"><label class="field__label"><span>기관 코드 </span></label><input class="input" value="INST-0001" readonly><p class="field__help">등록할 때 자동으로 만듭니다.</p></div></div>
+    <div class="field"><label class="field__label"><span>기관명 </span><span class="field__req">필수</span></label><input class="input" value="가나시청"></div>
+    <div class="field"><label class="field__label"><span>분류 </span><span class="field__req">필수</span></label><select class="select" style="max-width:240px"><option selected>광역</option><option>기초</option><option>공공기관</option></select></div>
+    <div class="field"><span class="field__label"><span>계약 상태 <span class="field__req">필수</span></span></span>
+      <div class="radio-row"><label><input type="radio" name="ct">시범</label><label><input type="radio" name="ct" checked>유료</label><label><input type="radio" name="ct" disabled>종료 (계약 종료 버튼으로 처리)</label></div></div>
+    <div class="field"><span class="field__label"><span>게시판 알림 연동 방식 <span class="field__req">필수</span></span></span>
+      <div class="radio-row"><label><input type="radio" name="lt" checked data-show="lt-agent">설치 모듈</label><label><input type="radio" name="lt">수집기</label><label><input type="radio" name="lt">API</label></div>
+      <div class="notice notice--plain" id="lt-agent"><i data-lucide="info"></i><p>설치 모듈 기관은 저장 후 설치 모듈 현황에서 라이선스를 발급해 주세요.</p></div></div>
+    <div class="field"><label class="field__label"><span>기관 대표 연락처 </span></label><input class="input" value="000-0000-0000" style="max-width:240px"><p class="field__help">업무용 대표 번호</p></div>
+    <div class="form-actions"><a class="btn btn--ghost" href="D20.html">취소</a><a class="btn btn--primary" href="D20.html">저장</a></div>
+  </form>
+</section>
+<aside data-state="default edit">
+  <section class="panel">
+    <div class="panel__head"><h2 class="panel__title">대표 계정</h2><button class="btn btn--outline btn--sm" data-open="issue"><i data-lucide="user-plus"></i>대표 계정 발급</button></div>
+    <div class="tbl-wrap"><table class="data-tbl"><thead><tr><th>아이디</th><th>이름</th><th>상태</th></tr></thead><tbody><tr><td>gana_admin</td><td>관리자A</td><td>사용</td></tr></tbody></table></div>
+    <p class="field__help mt-4">기관당 대표는 1명 이상이어야 합니다. 대표 변경도 여기서 합니다.</p>
+  </section>
+  <section class="panel">
+    <h2 class="panel__title" style="margin-bottom:12px">계약 종료</h2>
+    <p class="muted small" style="margin-bottom:16px">종료하면 기관 관리자 로그인과 기관 소식 발송이 막히고 앱 기관 찾기에서 숨겨집니다.</p>
+    <button class="btn btn--outline btn--sm" data-open="end"><i data-lucide="ban"></i>계약 종료</button>
+  </section>
+</aside>
+</div>
+</main>
+<div class="modal-backdrop" id="issue"><div class="modal" role="dialog" aria-labelledby="issue-t">
+  <h2 class="modal__title" id="issue-t">대표 계정 발급</h2>
+  <form class="form" onsubmit="return false">
+    <div class="field"><label class="field__label"><span>아이디 </span><span class="field__req">필수</span></label><input class="input" placeholder="영문, 숫자"></div>
+    <div class="field"><label class="field__label"><span>이름 </span><span class="field__req">필수</span></label><input class="input"></div>
+    <div class="field"><label class="field__label"><span>업무 이메일 </span><span class="field__req">필수</span></label><input class="input" type="email" placeholder="name@example.go.kr"><p class="field__help">임시 비밀번호를 이 주소로 보냅니다.</p></div>
+  </form>
+  <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><a class="btn btn--primary" href="D21.html?state=edit">발급</a></div></div></div><div class="modal-backdrop" id="end"><div class="modal" role="dialog" aria-labelledby="end-t">
+  <h2 class="modal__title" id="end-t">계약을 종료할까요?</h2><p class="modal__text">기관 관리자 로그인, 기관 소식 발송이 막히고 앱에서 숨겨집니다. 기존 구독과 내역은 90일 보관 규칙대로 정리됩니다.</p>
+  <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><a class="btn btn--primary" href="D20.html">계약 종료</a></div></div></div>
+<script src="../js/proto.js"></script>
+</body>
+</html>
