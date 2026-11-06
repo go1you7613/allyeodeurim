@@ -19,6 +19,7 @@
     <div data-state="default"><div class="field"><label class="field__label"><span>아이디 </span><span class="field__req">필수</span></label><div class="inline"><input class="input" placeholder="영문, 숫자"><button class="btn btn--outline btn--sm">중복 확인</button></div></div></div>
     <div data-state="edit"><div class="field"><label class="field__label"><span>아이디 </span></label><input class="input" value="op_admin2" readonly></div></div>
     <div class="field"><label class="field__label"><span>이름 </span><span class="field__req">필수</span></label><input class="input" value="운영자2"></div>
+    <div class="field"><label class="field__label"><span>업무 이메일 </span><span class="field__req">필수</span></label><input class="input" type="email" value="op2@example.com"><p class="field__help">등록, 비밀번호 초기화 때 임시 비밀번호를 이 주소로 보냅니다. 비밀번호 찾기에도 씁니다.</p></div>
     <div class="field"><span class="field__label"><span>접속 허용 IP <span class="field__req">필수</span></span></span>
       <div class="inline"><input class="input" value="203.0.113.10"><button class="btn btn--ghost btn--sm" aria-label="삭제"><i data-lucide="x"></i></button></div>
       <div class="inline"><input class="input" value="203.0.113.11"><button class="btn btn--ghost btn--sm" aria-label="삭제"><i data-lucide="x"></i></button></div>
@@ -28,13 +29,15 @@
         <div><p class="field__label">사용 여부</p><p class="field__help">자기 계정은 사용 중지할 수 없습니다.</p></div>
         <button class="toggle" role="switch" aria-checked="true" aria-label="사용 여부"></button></div>
       <div class="row" style="padding:12px 0;border-top:1px solid var(--c-border);flex-wrap:wrap">
-        <span class="badge badge--strong">잠김</span><button class="btn btn--outline btn--sm">잠금 해제</button><button class="btn btn--outline btn--sm">비밀번호 초기화</button></div>
+        <span class="badge badge--strong">잠김</span><button class="btn btn--outline btn--sm">잠금 해제</button><button class="btn btn--outline btn--sm" data-open="reset">비밀번호 초기화</button></div>
     </div>
     <div class="form-actions"><a class="btn btn--ghost" href="D70.html">취소</a><a class="btn btn--primary" href="D70.html">저장</a></div>
   </form>
 </section>
 </main>
-
+<div class="modal-backdrop" id="reset"><div class="modal" role="dialog" aria-labelledby="reset-t">
+  <h2 class="modal__title" id="reset-t">비밀번호를 초기화할까요?</h2><p class="modal__text">임시 비밀번호를 운영자의 업무 이메일로 보냅니다. 첫 로그인 때 비밀번호를 바꿔야 합니다.</p>
+  <div class="modal__actions"><button class="btn btn--outline" data-close>취소</button><button class="btn btn--primary" data-close>초기화</button></div></div></div>
 <script src="../js/proto.js"></script>
 </body>
 </html>

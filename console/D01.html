@@ -21,7 +21,23 @@
   <div class="field"><label class="field__label"><span>비밀번호 </span></label><input class="input" type="password" placeholder="비밀번호"></div>
   <a class="btn btn--primary btn--block" href="D10.html">로그인</a>
 </form>
+<div class="auth__links"><a href="?state=find">비밀번호 찾기</a></div>
 <p class="muted small mt-6" style="text-align:center">접속 허용 IP에서만 열립니다. 30분 동안 사용하지 않으면 자동으로 로그아웃됩니다.</p>
+</div>
+<div data-state="find">
+<div class="auth__brand"><h1>비밀번호 찾기</h1><p>업무 이메일로 임시 비밀번호를 보내 드립니다</p></div>
+<form class="form" onsubmit="return false">
+  <div class="field"><label class="field__label"><span>아이디 </span><span class="field__req">필수</span></label><input class="input" placeholder="아이디"></div>
+  <div class="field"><label class="field__label"><span>업무 이메일 </span><span class="field__req">필수</span></label><input class="input" type="email" placeholder="name@example.com"></div>
+  <a class="btn btn--primary btn--block" href="?state=sent">임시 비밀번호 보내기</a>
+</form>
+<div class="auth__links"><a href="D01.html">로그인</a></div>
+<p class="muted small mt-6">잠긴 계정은 다른 운영자가 잠금을 먼저 풀어야 합니다.</p>
+</div>
+<div data-state="sent">
+<div class="auth__brand"><h1>비밀번호 찾기</h1></div>
+<div class="notice"><i data-lucide="mail-check"></i><p>입력하신 정보가 맞으면 업무 이메일로 임시 비밀번호를 보냈습니다. 임시 비밀번호로 로그인하면 바로 새 비밀번호로 바꿔야 합니다.</p></div>
+<a class="btn btn--outline btn--block mt-6" href="D01.html">로그인으로 돌아가기</a>
 </div>
 <div data-state="ipblock" style="text-align:center">
   <div class="empty"><i data-lucide="shield-x"></i><p>접속이 허용되지 않은 IP입니다.</p></div>
