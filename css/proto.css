@@ -422,3 +422,5 @@ body.is-fmodal-open{overflow:hidden;}
 /* 보정: 앱 화면은 안내 바를 맨 위에 붙이고 휴대폰 프레임만 띄움, 처리 규칙은 번호가 이미 있어 점 표시 없음 */
 @media (min-width:768px){ .app-body{padding:0 0 var(--sp-6);} .app-body .phone{margin-top:var(--sp-6);} }
 .fm-rules{list-style:none;padding-left:0;}
+/* 보정: 세로 방향 배치에서 가운데 정렬되던 문제 → 안내 바를 항상 맨 위에 붙임 */
+.app-body{justify-content:flex-start;}
